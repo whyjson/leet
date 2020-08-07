@@ -20216,38 +20216,56 @@
         var ajObj = {}
         arr.forEach((item) => {
             if (!item.parentMenu) {
-                arrs.push(item)
+                var itemIndex = arrs.push(item) - 1
+                ajObj[item.menuId] = [itemIndex]
             }
         })
-        return arr.reduce((h, m) => {
+        var res = arr.reduce((h, m) => {
             if (m.parentMenu) {
+                if(ajObj[m.parentMenu.menuId] && ajObj[m.parentMenu.menuId].length !== 0){
+                    var obj = null
+                    var curArr = h
+                    ajObj[m.parentMenu.menuId].forEach(item => {
+                        obj = curArr[item]
+                        curArr = obj.children
+                    })
+                    if (obj && !obj.children) {
+                        obj.children = []
+                    }
+                    var itemIndex = obj.children.push(m) - 1
+                    ajObj[m.parentMenu.menuId].push(itemIndex)
+                } else {
+                //     ajObj[m.parentMenu.menuId] = []
+                if (!ajObj[m.parentMenu.menuId]) ajObj[m.parentMenu.menuId] = []
+                    foo(h, m, ajObj)
+                }
 
-                foo(h, m)
             }
 
-            function foo(arr, cur) {
-                arr.forEach(item => {
+            function foo(arr, cur, addr) {
+                arr.forEach((item, index) => {
                     if (item.menuId === cur.parentMenu.menuId) {
                         if (!item.children) {
                             item.children = []
                         }
-                        item.children.push(cur)
+                        var itemIndex = item.children.push(cur) - 1
+                        addr[cur.parentMenu.menuId].push(itemIndex)
                     } else if (item.children) {
-                        foo(item.children, cur)
+                        foo(item.children, cur, addr)
                     }
                 })
             }
 
             return h
         }, arrs)
+        console.log(ajObj)
+        return res
     }
 
     var start = new Date().getTime()
-    console.log(start)
     console.log(getTree(obj))
     // console.log((obj))
     var end = new Date().getTime()
-    console.log(end)
     console.log(end- start)
 
 </script>

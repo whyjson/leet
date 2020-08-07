@@ -50,44 +50,44 @@
     // };
     // console.log(findMin([4,5,6,7,0,1,2]))
     // console.log(findMin([7, 2, 3, 4]))
-    console.log(findMin([2, 3, 4]))
+    // console.log(findMin([2, 3, 4]))
 
 
 
 
     // 两数想加
-    var nums = [2, 7, 11, 15], target = 9
-    var twoSum = function(nums, target) {
-        var arr = []
-        for (var i = 0; i < nums.length; i++) {
-            var reset = target - nums[i]
-            // if (reset < 0) break
-            var n = i + 1
-            var resArr = nums.slice(n)
-            if (resArr.indexOf(reset) > -1) {
-                var as = [i, resArr.indexOf(reset) + n]
-                arr = arr.concat(as)
-            }
-        }
-        return arr
-    };
+    // var nums = [2, 7, 11, 15], target = 9
+    // var twoSum = function(nums, target) {
+    //     var arr = []
+    //     for (var i = 0; i < nums.length; i++) {
+    //         var reset = target - nums[i]
+    //         // if (reset < 0) break
+    //         var n = i + 1
+    //         var resArr = nums.slice(n)
+    //         if (resArr.indexOf(reset) > -1) {
+    //             var as = [i, resArr.indexOf(reset) + n]
+    //             arr = arr.concat(as)
+    //         }
+    //     }
+    //     return arr
+    // };
     // console.log(twoSum(nums, target))
 
     // 链表相加
-    var all = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
-    var al = {}
-    all.reduce((h, m, i, a) => {
-        h.val = m
-        if (i === a.length - 1) {
-            h.next = null
-        } else {
-            h.next = {}
-        }
-        return h.next
-    }, al)
+    // var all = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+    // var al = {}
+    // all.reduce((h, m, i, a) => {
+    //     h.val = m
+    //     if (i === a.length - 1) {
+    //         h.next = null
+    //     } else {
+    //         h.next = {}
+    //     }
+    //     return h.next
+    // }, al)
     // console.log(al)
-    var l1 = {val: 5, next: null}
-    var l2 = {val: 5, next: null}
+    // var l1 = {val: 5, next: null}
+    // var l2 = {val: 5, next: null}
     // var addTwoNumbers = function(l1, l2) {
     //   var sR = {}
     //   var sl1 = '' + l1.val
@@ -721,18 +721,74 @@
     // ]))
 
     // 1529. 灯泡开关
-    var minFlips = function(target) {
-        var initStatus = '0'
-        var changeNum = 0
-        for(var i = 0;i<target.length;i++) {
-            if (target[i] !== initStatus){
-                changeNum ++
-                initStatus = initStatus === '0' ? '1' :'0'
+    // var minFlips = function(target) {
+    //     var initStatus = '0'
+    //     var changeNum = 0
+    //     for(var i = 0;i<target.length;i++) {
+    //         if (target[i] !== initStatus){
+    //             changeNum ++
+    //             initStatus = initStatus === '0' ? '1' :'0'
+    //         }
+    //     }
+    //     return changeNum
+    // };
+    // console.log(minFlips('001011101'))
+
+
+    // 获取节点路径
+    const exampleTree = [
+        { id: 1},
+        { id: 2, pid: 1},
+        { id: 3, pid: 1},
+        { id: 4, pid: 2},
+        { id: 5, pid: 3},
+        { id: 6, pid: 5}
+    ]
+    function getTree(arr) {
+        var arrs = []
+        var ajObj = {}
+        arr.forEach((item) => {
+            if (!item.pid) {
+                var itemIndex = arrs.push(item)
+                ajObj[item.id] = [itemIndex]
             }
-        }
-        return changeNum
-    };
-    console.log(minFlips('001011101'))
+        })
+        var res = arr.reduce((h, m) => {
+            if (m.pid) {
+                if(ajObj[m.pid]){
+
+                } else {
+                    ajObj[m.pid] = []
+                    foo(h, m, ajObj)
+                }
+
+            }
+
+            function foo(arr, cur, addr) {
+                arr.forEach((item, index) => {
+                    if (item.id === cur.pid) {
+                        addr[cur.pid].push(index)
+                        if (!item.children) {
+                            item.children = []
+                        }
+                        item.children.push(cur)
+                        return
+                    } else if (item.children) {
+                        addr[cur.pid].push(index)
+                        foo(item.children, cur, addr)
+                        addr[cur.pid].pop()
+                    }
+                })
+            }
+
+            return h
+        }, arrs)
+        console.log(ajObj)
+        return res
+    }
+
+    console.log(getTree(exampleTree))
+
 </script>
 </body>
 </html>
