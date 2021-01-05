@@ -736,59 +736,108 @@
 
 
     // 获取节点路径
-    const exampleTree = [
-        { id: 1},
-        { id: 2, pid: 1},
-        { id: 3, pid: 1},
-        { id: 4, pid: 2},
-        { id: 5, pid: 3},
-        { id: 6, pid: 5}
-    ]
-    function getTree(arr) {
-        var arrs = []
-        var ajObj = {}
-        arr.forEach((item) => {
-            if (!item.pid) {
-                var itemIndex = arrs.push(item)
-                ajObj[item.id] = [itemIndex]
-            }
-        })
-        var res = arr.reduce((h, m) => {
-            if (m.pid) {
-                if(ajObj[m.pid]){
+    // const exampleTree = [
+    //     { id: 1},
+    //     { id: 2, pid: 1},
+    //     { id: 3, pid: 1},
+    //     { id: 4, pid: 2},
+    //     { id: 5, pid: 3},
+    //     { id: 6, pid: 5}
+    // ]
+    // function getTree(arr) {
+    //     var arrs = []
+    //     var ajObj = {}
+    //     arr.forEach((item) => {
+    //         if (!item.pid) {
+    //             var itemIndex = arrs.push(item)
+    //             ajObj[item.id] = [itemIndex]
+    //         }
+    //     })
+    //     var res = arr.reduce((h, m) => {
+    //         if (m.pid) {
+    //             if(ajObj[m.pid]){
+    //
+    //             } else {
+    //                 ajObj[m.pid] = []
+    //                 foo(h, m, ajObj)
+    //             }
+    //
+    //         }
+    //
+    //         function foo(arr, cur, addr) {
+    //             arr.forEach((item, index) => {
+    //                 if (item.id === cur.pid) {
+    //                     addr[cur.pid].push(index)
+    //                     if (!item.children) {
+    //                         item.children = []
+    //                     }
+    //                     item.children.push(cur)
+    //                     return
+    //                 } else if (item.children) {
+    //                     addr[cur.pid].push(index)
+    //                     foo(item.children, cur, addr)
+    //                     addr[cur.pid].pop()
+    //                 }
+    //             })
+    //         }
+    //
+    //         return h
+    //     }, arrs)
+    //     console.log(ajObj)
+    //     return res
+    // }
+    //
+    // console.log(getTree(exampleTree))
 
-                } else {
-                    ajObj[m.pid] = []
-                    foo(h, m, ajObj)
+
+    // 830. 较大分组的位置
+
+    // var largeGroupPositions = function(s) {
+    //     var fu = '';
+    //     var res = [];
+    //     var resArr = []
+    //     var result = []
+    //     var max = 0
+    //     for (var i = 0; i < s.length; i++) {
+    //         if (fu !== s[i]) {
+    //             fu = s[i];
+    //             res[0] = i
+    //         } else {
+    //             res[1] = i
+    //             if (resArr[resArr.length - 1] && resArr[resArr.length - 1][0] === res[0]) {
+    //                 resArr.pop();
+    //             }
+    //             resArr.push([...res])
+    //         }
+    //     }
+    //     console.log(resArr);
+    //     resArr.forEach(it => {
+    //         if (it[1] - it[0] >= 2) {
+    //             result.push(it)
+    //         }
+    //     })
+    //     return result
+    // };
+    var largeGroupPositions = function(s) {
+        var res = [];
+        var pot = 0;
+        var fu = '';
+        for (var i = 0; i < s.length; i++) {
+            if (fu !== s[i]) {
+                fu = s[i];
+                if ((i - 1 - pot) >= 2) {
+                    res.push([pot, i - 1])
                 }
-
+                pot = i
+            } else {
+                if (i === s.length - 1 && i - pot >= 2) {
+                    res.push([pot, i])
+                }
             }
-
-            function foo(arr, cur, addr) {
-                arr.forEach((item, index) => {
-                    if (item.id === cur.pid) {
-                        addr[cur.pid].push(index)
-                        if (!item.children) {
-                            item.children = []
-                        }
-                        item.children.push(cur)
-                        return
-                    } else if (item.children) {
-                        addr[cur.pid].push(index)
-                        foo(item.children, cur, addr)
-                        addr[cur.pid].pop()
-                    }
-                })
-            }
-
-            return h
-        }, arrs)
-        console.log(ajObj)
+        }
         return res
-    }
-
-    console.log(getTree(exampleTree))
-
+    };
+    console.log(largeGroupPositions("aba"));
 </script>
 </body>
 </html>
