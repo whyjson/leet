@@ -818,26 +818,122 @@
     //     })
     //     return result
     // };
-    var largeGroupPositions = function(s) {
-        var res = [];
-        var pot = 0;
-        var fu = '';
-        for (var i = 0; i < s.length; i++) {
-            if (fu !== s[i]) {
-                fu = s[i];
-                if ((i - 1 - pot) >= 2) {
-                    res.push([pot, i - 1])
-                }
-                pot = i
-            } else {
-                if (i === s.length - 1 && i - pot >= 2) {
-                    res.push([pot, i])
-                }
-            }
+    // var largeGroupPositions = function(s) {
+    //     var res = [];
+    //     var pot = 0;
+    //     var fu = '';
+    //     for (var i = 0; i < s.length; i++) {
+    //         if (fu !== s[i]) {
+    //             fu = s[i];
+    //             if ((i - 1 - pot) >= 2) {
+    //                 res.push([pot, i - 1])
+    //             }
+    //             pot = i
+    //         } else {
+    //             if (i === s.length - 1 && i - pot >= 2) {
+    //                 res.push([pot, i])
+    //             }
+    //         }
+    //     }
+    //     return res
+    // };
+    // console.log(largeGroupPositions("aba"));
+
+
+
+    //  1700. 无法吃午餐的学生数量
+    // var countStudents = function(students, sandwiches) {
+    //
+    //     var sl = students.length;
+    //     var res = -1;
+    //     while (sl !== res) {
+    //         if (res !== -1) {
+    //             sl = res
+    //         }
+    //         res = count()
+    //     }
+    //
+    //     return res;
+    //
+    //     function count() {
+    //         var len = students.length;
+    //         var num = 0;
+    //         while (num < len) {
+    //             num ++
+    //             if (students[0] === sandwiches[0]) {
+    //                 students.shift();
+    //                 sandwiches.shift();
+    //             } else {
+    //                 students.push(students.shift());
+    //             }
+    //         }
+    //         return students.length
+    //     }
+    //
+    //
+    // };
+    // console.log(countStudents([1,1,0,0], [0,1,0,1]));
+    // console.log(countStudents([1,1,1,0,0,1], [1,0,0,0,1,1]));
+
+
+
+    //  1450. 在既定时间做作业的学生人数
+    // var busyStudent = function(startTime, endTime, queryTime) {
+    //     var num = 0
+    //     for (var i = 0;i < startTime.length; i++) {
+    //         if (queryTime >= startTime[i] && queryTime <= endTime[i]){
+    //             num ++
+    //         }
+    //     }
+    //     return num
+    // };
+    // console.log(busyStudent([9, 8, 7, 6, 5, 4, 3, 2, 1], [10, 10, 10, 10, 10, 10, 10, 10, 10], 5));
+
+
+    // 463. 岛屿的周长
+    // var islandPerimeter = function(grid) {
+    //     var res = 0
+    //     grid.forEach((it, id) => {
+    //         it.forEach((item, index) => {
+    //             if (item === 1) {
+    //                 res += foo(id, index)
+    //             }
+    //         })
+    //     });
+    //
+    //     return res;
+    //
+    //     function foo(r, c) {
+    //         var num = 4;
+    //         if (grid[r] && grid[r][c-1] === 1) {
+    //             num--
+    //         }
+    //         if (grid[r] && grid[r][c+1] === 1) {
+    //             num--
+    //         }
+    //         if (grid[r - 1] && grid[r - 1][c] === 1) {
+    //             num--
+    //         }
+    //         if (grid[r + 1] && grid[r + 1][c] === 1) {
+    //             num--
+    //         }
+    //         return num
+    //     }
+    // };
+    // console.log(islandPerimeter([[1]]));
+
+    // 189. 旋转数组
+    var rotate = function(nums, k) {
+        var start = 0;
+        while (start < k) {
+            start++
+            nums.unshift(nums.pop());
         }
-        return res
+        return nums
     };
-    console.log(largeGroupPositions("aba"));
+    console.log(rotate([1,2,3,4,5,6,7], 2));
+
+
 </script>
 </body>
 </html>
