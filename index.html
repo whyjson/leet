@@ -923,16 +923,162 @@
     // console.log(islandPerimeter([[1]]));
 
     // 189. 旋转数组
-    var rotate = function(nums, k) {
-        var start = 0;
-        while (start < k) {
-            start++
-            nums.unshift(nums.pop());
-        }
-        return nums
-    };
-    console.log(rotate([1,2,3,4,5,6,7], 2));
+    // var rotate = function(nums, k) {
+    //     var start = 0;
+    //     while (start < k) {
+    //         start++
+    //         nums.unshift(nums.pop());
+    //     }
+    //     return nums
+    // };
+    // console.log(rotate([1,2,3,4,5,6,7], 2));
 
+
+    // 210. 课程表 II  没做出来 是一道图的问题
+    // var findOrder = function(numCourses, prerequisites) {
+    //     if (prerequisites.length === 0) {
+    //         var arr = new Array(numCourses).fill();
+    //         return (arr.map((it, d) => d)).reverse();
+    //     }
+    //     var res = [];
+    //     var tar = null;
+    //     for (const x of prerequisites) {
+    //         if (res.length === 0) {
+    //             res = res.concat([x[1], x[0]])
+    //         } else if (res.length === numCourses) {
+    //             return res
+    //         } else if (x[1] === res[res.length - 1]) {
+    //
+    //             res.push(x[0])
+    //         }
+    //         if (tar === x[0]) {
+    //             var ind = res.indexOf(x[0]);
+    //             res.splice(ind, 0, x[1])
+    //         }
+    //         tar = x[0]
+    //     }
+    //     return res
+    //
+    // };
+    // console.log(findOrder(3, []));
+
+
+    // 200. 岛屿数量
+    // var numIslands = function(grid) {
+    //     var num = 0;
+    //     grid.forEach((it, r) => {
+    //         it.forEach((item, c) => {
+    //             if (item === '1') {
+    //                 foo(r, c)
+    //                 num++
+    //                 // console.log(foo(r, c), r, c);
+    //             }
+    //         })
+    //     })
+    //
+    //     function foo(r, c) {
+    //         if (grid[r] && grid[r][c - 1] === '1') {
+    //             grid[r][c - 1] = 1;
+    //             foo(r, c - 1);
+    //         }
+    //         if (grid[r] && grid[r][c + 1] === '1') {
+    //             grid[r][c + 1] = 1;
+    //             foo(r, c + 1);
+    //         }
+    //         if (grid[r - 1] && grid[r - 1][c] === '1') {
+    //             grid[r - 1][c] = 1;
+    //             foo(r - 1, c);
+    //         }
+    //         if (grid[r + 1] && grid[r + 1][c] === '1') {
+    //             grid[r + 1][c] = 1;
+    //             foo(r + 1, c);
+    //         }
+    //
+    //
+    //     }
+    //
+    //     return num
+    // };
+    // // console.log(numIslands([
+    // //     ["1","1","0","0","0"],
+    // //     ["1","1","0","0","0"],
+    // //     ["0","0","1","0","0"],
+    // //     ["0","0","0","1","1"]
+    // // ]));
+    // console.log(numIslands([
+    //     ["1","1","1","1","0"],
+    //     ["1","1","0","1","0"],
+    //     ["1","1","0","0","0"],
+    //     ["0","0","0","0","0"]
+    // ]));
+
+
+    // 1584. 连接所有点的最小费用
+    // var minCostConnectPoints = function(points) {
+    //     // let num = 0;
+    //     // points.forEach(it => {
+    //     //     if (!it[3]) {
+    //     //         if (num === 0) {
+    //     //             it[3] = 1;
+    //     //         }
+    //     //         points.forEach(item => {
+    //     //             if (!item[3]) {
+    //     //
+    //     //             }
+    //     //         })
+    //     //     }
+    //     // })
+    //
+    //     let num = 0;
+    //     points.sort(function(a,b){return a[0]+a[1] -b[0]-b[1]});
+    //     console.log(points);
+    //     points.forEach( (it, idx)=> {
+    //         if (idx !== 0) {
+    //             num += Math.abs(it[0] - points[idx - 1][0]) + Math.abs(it[1] - points[idx - 1][1]);
+    //         }
+    //     });
+    //     return num;
+    // };
+    // console.log(minCostConnectPoints([[0,0],[2,2],[3,10],[5,2],[7,0]]));
+
+    // 15. 三数之和
+    var threeSum = function(nums) {
+        if (nums.length < 3) return [];
+        var soRes = nums.sort((a, b) => (a-b));
+        var res = [];
+        for (var i = 0; i < soRes.length - 2; i++){
+            var L = i + 1;
+            var R = soRes.length - 1;
+            if (soRes[i] === soRes[i - 1]) continue;
+            // if (soRes[i] + soRes[L] + soRes[R] === 0) res.push([soRes[i], soRes[L], soRes[R]]);
+            while (L < R) {
+                if (soRes[i] + soRes[L] + soRes[R] === 0) {
+                    res.push([soRes[i], soRes[L], soRes[R]]);
+                    let LB = L;
+                    while (soRes[L] === soRes[LB]) {
+                        L++;
+                    }
+                }
+                if (soRes[i] + soRes[L] + soRes[R] > 0) {
+                    let RB = R;
+                    while (soRes[R] === soRes[RB]) {
+                        R--
+                    }
+                }
+                if (soRes[i] + soRes[L] + soRes[R] < 0) {
+                    let LB = L;
+                    while (soRes[L] === soRes[LB]) {
+                        L++
+                    }
+                }
+
+            }
+        }
+
+        return res
+    };
+    // console.log(threeSum([-1,0,1,2,-1,-4]));
+    console.log(threeSum([0,0,0,0]));
 
 </script>
 </body>
