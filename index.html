@@ -1042,44 +1042,132 @@
     // console.log(minCostConnectPoints([[0,0],[2,2],[3,10],[5,2],[7,0]]));
 
     // 15. 三数之和
-    var threeSum = function(nums) {
-        if (nums.length < 3) return [];
-        var soRes = nums.sort((a, b) => (a-b));
-        var res = [];
-        for (var i = 0; i < soRes.length - 2; i++){
-            var L = i + 1;
-            var R = soRes.length - 1;
-            if (soRes[i] === soRes[i - 1]) continue;
-            // if (soRes[i] + soRes[L] + soRes[R] === 0) res.push([soRes[i], soRes[L], soRes[R]]);
-            while (L < R) {
-                if (soRes[i] + soRes[L] + soRes[R] === 0) {
-                    res.push([soRes[i], soRes[L], soRes[R]]);
-                    let LB = L;
-                    while (soRes[L] === soRes[LB]) {
-                        L++;
-                    }
-                }
-                if (soRes[i] + soRes[L] + soRes[R] > 0) {
-                    let RB = R;
-                    while (soRes[R] === soRes[RB]) {
-                        R--
-                    }
-                }
-                if (soRes[i] + soRes[L] + soRes[R] < 0) {
-                    let LB = L;
-                    while (soRes[L] === soRes[LB]) {
-                        L++
-                    }
-                }
+    // var threeSum = function(nums) {
+    //     if (nums.length < 3) return [];
+    //     var soRes = nums.sort((a, b) => (a-b));
+    //     var res = [];
+    //     for (var i = 0; i < soRes.length - 2; i++){
+    //         var L = i + 1;
+    //         var R = soRes.length - 1;
+    //         if (soRes[i] === soRes[i - 1]) continue;
+    //         // if (soRes[i] + soRes[L] + soRes[R] === 0) res.push([soRes[i], soRes[L], soRes[R]]);
+    //         while (L < R) {
+    //             if (soRes[i] + soRes[L] + soRes[R] === 0) {
+    //                 res.push([soRes[i], soRes[L], soRes[R]]);
+    //                 let LB = L;
+    //                 while (soRes[L] === soRes[LB]) {
+    //                     L++;
+    //                 }
+    //             }
+    //             if (soRes[i] + soRes[L] + soRes[R] > 0) {
+    //                 let RB = R;
+    //                 while (soRes[R] === soRes[RB]) {
+    //                     R--
+    //                 }
+    //             }
+    //             if (soRes[i] + soRes[L] + soRes[R] < 0) {
+    //                 let LB = L;
+    //                 while (soRes[L] === soRes[LB]) {
+    //                     L++
+    //                 }
+    //             }
+    //
+    //         }
+    //     }
+    //
+    //     return res
+    // };
+    // // console.log(threeSum([-1,0,1,2,-1,-4]));
+    // console.log(threeSum([0,0,0,0]));
 
+    // 221。最大正方形
+
+    // 自己写的 超时了
+    // var maximalSquare = function(matrix) {
+    //     let res = 0;
+    //     matrix.forEach((it, index) => {
+    //         it.forEach((item, indexEm) => {
+    //             if (item === '1'){
+    //                 let num = 0;
+    //                 while (matrix[index + num] !== undefined && (matrix[index+num][indexEm + num] !== undefined)){
+    //                     if (matrix[index+num][indexEm + num] === '1') {
+    //                         const sq = getSquare(index, indexEm, num, matrix);
+    //                         const sqS = JSON.stringify(sq);
+    //                         console.log(sqS);
+    //                         if (sqS.indexOf(0) < 0){
+    //                             res = Math.pow(sq.length, 2) > res ? Math.pow(sq.length, 2) : res
+    //                         }
+    //                     }
+    //                     num ++
+    //                 }
+    //             }
+    //         })
+    //     })
+    //
+    //
+    //     return res;
+    //
+    //     function getSquare(col,row,len,matrix) {
+    //         const sq = [];
+    //         var ind = 0;
+    //         for (var i = col; i<=len+col;i++) {
+    //             sq[ind] = [];
+    //             for (var j = row; j<=len+row;j++) {
+    //                 sq[ind].push(matrix[i][j])
+    //             }
+    //             ind++
+    //         }
+    //         return sq
+    //     }
+    // };
+
+    // 动态规划
+    // var maximalSquare = function(matrix) {
+    //     var dp = [];
+    //     var res = 0;
+    //     for (var i = 0; i<matrix.length;i++) {
+    //         dp[i] = [];
+    //         for (var j = 0; j<matrix[i].length;j++) {
+    //             if (matrix[i][j] === '1') {
+    //                 if (i === 0 && j === 0) {
+    //                     dp[i][j] = 1
+    //                 }
+    //                 const s1 = dp[i - 1] && dp[i - 1][j - 1] || 0;
+    //                 const s2 = dp[i][j-1] || 0;
+    //                 const s3 = dp[i-1] && dp[i-1][j] || 0;
+    //                 dp[i][j] = Math.min(s1, s2, s3) + 1;
+    //                 res = dp[i][j] * dp[i][j] > res ? dp[i][j] * dp[i][j] : res
+    //             }
+    //         }
+    //     }
+    //     console.log(dp);
+    //     return res;
+    // };
+
+
+    // console.log(maximalSquare([
+    //     ["1", "0", "1", "0", "0"],
+    //     ["1", "0", "1", "1", "1"],
+    //     ["1", "1", "1", "1", "1"],
+    //     ["1", "0", "0", "1", "0"]]));
+
+
+    // 面试题 17。16 按摩师
+    var massage = function(nums) {
+        if (nums.length === 0) return 0;
+        if (nums.length === 1) return nums[0];
+        var dp = [];
+        nums.forEach((it,index) => {
+            if (index === 0 || index === 1) {
+                dp[index] = it
+            } else {
+                dp[index] = Math.max(dp[index - 2] || 0, dp[index - 3] || 0) + it
             }
-        }
 
-        return res
+        })
+        return Math.max(dp.pop(), dp.pop())
     };
-    // console.log(threeSum([-1,0,1,2,-1,-4]));
-    console.log(threeSum([0,0,0,0]));
-
+    console.log(massage([2,1,4,5,3,1,1,3]));
 </script>
 </body>
 </html>
