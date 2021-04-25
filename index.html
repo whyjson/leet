@@ -1,1173 +1,1187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Title</title>
 </head>
 <body>
 <script>
-    // 198 打家劫舍
-    // var rob = function(nums) {
-    //     if (nums.length <=1) {
-    //         return nums[0] || 0
-    //     }
-    //     if (nums.length === 2) {
-    //         return Math.max(nums[0], nums[1])
-    //     }
-    //     var dp = []
-    //     dp[0] = nums[0]
-    //     dp[1] = nums[1]
-    //     dp[2] = Math.max(nums[1], nums[0] + nums[2])
-    //     for (var i = 3;i<nums.length;i++) {
-    //         dp[i] = Math.max(dp[i - 2], dp[i - 3]) + nums[i]
-    //     }
-    //     return Math.max(dp.pop(), dp.pop())
-    // };
-    // console.log(rob([2,7,9,3,1]))
+  // 198 打家劫舍
+  // var rob = function(nums) {
+  //     if (nums.length <=1) {
+  //         return nums[0] || 0
+  //     }
+  //     if (nums.length === 2) {
+  //         return Math.max(nums[0], nums[1])
+  //     }
+  //     var dp = []
+  //     dp[0] = nums[0]
+  //     dp[1] = nums[1]
+  //     dp[2] = Math.max(nums[1], nums[0] + nums[2])
+  //     for (var i = 3;i<nums.length;i++) {
+  //         dp[i] = Math.max(dp[i - 2], dp[i - 3]) + nums[i]
+  //     }
+  //     return Math.max(dp.pop(), dp.pop())
+  // };
+  // console.log(rob([2,7,9,3,1]))
 
-    // 153
-    // var findMin = function(nums) {
-    //     var left = 0
-    //     var right = nums.length
-    //     if(nums.length === 1) {
-    //         return nums[0]
-    //     }
-    //     while(left < right) {
-    //         var mid = Math.floor((left + right) / 2)
-    //         if(nums[mid] > nums[left] && nums[mid] > nums[mid + 1]){
-    //             return nums[mid + 1]
-    //         } else if(nums[mid] < nums[mid - 1] && nums[mid] < nums[mid + 1]){
-    //             return nums[mid]
-    //         } else if (nums[mid] < nums[left]){
-    //             right = mid
-    //         } else if (nums[mid] < nums[mid + 1]){
-    //             left = mid
-    //         } else {
-    //             left ++
-    //         }
-    //     }
-    //     return nums[right] || nums[0]
-    // };
-    // console.log(findMin([4,5,6,7,0,1,2]))
-    // console.log(findMin([7, 2, 3, 4]))
-    // console.log(findMin([2, 3, 4]))
-
-
+  // 153
+  // var findMin = function(nums) {
+  //     var left = 0
+  //     var right = nums.length
+  //     if(nums.length === 1) {
+  //         return nums[0]
+  //     }
+  //     while(left < right) {
+  //         var mid = Math.floor((left + right) / 2)
+  //         if(nums[mid] > nums[left] && nums[mid] > nums[mid + 1]){
+  //             return nums[mid + 1]
+  //         } else if(nums[mid] < nums[mid - 1] && nums[mid] < nums[mid + 1]){
+  //             return nums[mid]
+  //         } else if (nums[mid] < nums[left]){
+  //             right = mid
+  //         } else if (nums[mid] < nums[mid + 1]){
+  //             left = mid
+  //         } else {
+  //             left ++
+  //         }
+  //     }
+  //     return nums[right] || nums[0]
+  // };
+  // console.log(findMin([4,5,6,7,0,1,2]))
+  // console.log(findMin([7, 2, 3, 4]))
+  // console.log(findMin([2, 3, 4]))
 
 
-    // 两数想加
-    // var nums = [2, 7, 11, 15], target = 9
-    // var twoSum = function(nums, target) {
-    //     var arr = []
-    //     for (var i = 0; i < nums.length; i++) {
-    //         var reset = target - nums[i]
-    //         // if (reset < 0) break
-    //         var n = i + 1
-    //         var resArr = nums.slice(n)
-    //         if (resArr.indexOf(reset) > -1) {
-    //             var as = [i, resArr.indexOf(reset) + n]
-    //             arr = arr.concat(as)
-    //         }
-    //     }
-    //     return arr
-    // };
-    // console.log(twoSum(nums, target))
+  // 两数想加
+  // var nums = [2, 7, 11, 15], target = 9
+  // var twoSum = function(nums, target) {
+  //     var arr = []
+  //     for (var i = 0; i < nums.length; i++) {
+  //         var reset = target - nums[i]
+  //         // if (reset < 0) break
+  //         var n = i + 1
+  //         var resArr = nums.slice(n)
+  //         if (resArr.indexOf(reset) > -1) {
+  //             var as = [i, resArr.indexOf(reset) + n]
+  //             arr = arr.concat(as)
+  //         }
+  //     }
+  //     return arr
+  // };
+  // console.log(twoSum(nums, target))
 
-    // 链表相加
-    // var all = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
-    // var al = {}
-    // all.reduce((h, m, i, a) => {
-    //     h.val = m
-    //     if (i === a.length - 1) {
-    //         h.next = null
-    //     } else {
-    //         h.next = {}
-    //     }
-    //     return h.next
-    // }, al)
-    // console.log(al)
-    // var l1 = {val: 5, next: null}
-    // var l2 = {val: 5, next: null}
-    // var addTwoNumbers = function(l1, l2) {
-    //   var sR = {}
-    //   var sl1 = '' + l1.val
-    //   var sl2 = '' + l2.val
-    //   while (l1.next) {
-    //     l1 = l1.next
-    //     sl1 += l1.val
-    //   }
-    //   while (l2.next) {
-    //     l2 = l2.next
-    //     sl2 += l2.val
-    //   }
-    //   var sum = parseInt(sl1.split('').reverse().join('')) + parseInt(sl2.split('').reverse().join(''));
-    //   console.log(sum);
-    //   (sum + '').split('').reverse().reduce((h, m, i, a) => {
-    //     h.val = m
-    //     if (i === a.length - 1) {
-    //       h.next = null
-    //     } else {
-    //       h.next = {}
-    //     }
-    //     return h.next
-    //   }, sR)
-    //   return sR
-    // }; // 大数相加会有问题
+  // 链表相加
+  // var all = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
+  // var al = {}
+  // all.reduce((h, m, i, a) => {
+  //     h.val = m
+  //     if (i === a.length - 1) {
+  //         h.next = null
+  //     } else {
+  //         h.next = {}
+  //     }
+  //     return h.next
+  // }, al)
+  // console.log(al)
+  // var l1 = {val: 5, next: null}
+  // var l2 = {val: 5, next: null}
+  // var addTwoNumbers = function(l1, l2) {
+  //   var sR = {}
+  //   var sl1 = '' + l1.val
+  //   var sl2 = '' + l2.val
+  //   while (l1.next) {
+  //     l1 = l1.next
+  //     sl1 += l1.val
+  //   }
+  //   while (l2.next) {
+  //     l2 = l2.next
+  //     sl2 += l2.val
+  //   }
+  //   var sum = parseInt(sl1.split('').reverse().join('')) + parseInt(sl2.split('').reverse().join(''));
+  //   console.log(sum);
+  //   (sum + '').split('').reverse().reduce((h, m, i, a) => {
+  //     h.val = m
+  //     if (i === a.length - 1) {
+  //       h.next = null
+  //     } else {
+  //       h.next = {}
+  //     }
+  //     return h.next
+  //   }, sR)
+  //   return sR
+  // }; // 大数相加会有问题
 
-    // var addTwoNumbers = function(l1, l2) {
-    //   var n = 0
-    //   var l = {}
-    //   var h = l
-    //   while((!!l1.val || l1.val === 0) || (!!l2.val || l2.val === 0) || n === 1) {
-    //     if (parseInt(l1.val || 0) + parseInt(l2.val || 0) + n >= 10) {
-    //       h.val = parseInt(l1.val || 0) + parseInt(l2.val || 0) - 10 + n
-    //       n = 1
-    //     } else {
-    //       h.val = parseInt(l1.val || 0) + parseInt(l2.val || 0) + n
-    //       n = 0
-    //     }
-    //     if (!l1.next && !l2.next && n === 0) {
-    //       h.next = null
-    //     } else {
-    //       h.next = {}
-    //       h = h.next
-    //     }
-    //     l1 = l1.next ? l1.next : {}
-    //     l2 = l2.next ? l2.next : {}
-    //
-    //   }
-    //   var nl = {next: null}
-    //   var pNext = {}
-    //   while (l.next) {
-    //     pNext = l.next
-    //     l.next = nl.next
-    //     nl.next = l
-    //     l = pNext
-    //   }
-    //   return l
-    // };
-    // console.log(addTwoNumbers(l1, l2))
-
-
-    // var lengthOfLongestSubstring = function(s) {
-    //   var len = 0
-    //   var si = 0
-    //   var str = ''
-    //   for (var i = 0; i < s.length; i++) {
-    //     if (str.indexOf(s[i]) >= 0) {
-    //       str = str.substr(str.indexOf(s[i]) + 1)
-    //     }
-    //     str += s[i]
-    //     len = str.length > len ? str.length : len
-    //   }
-    //   return len
-    // };
-    //
-    // console.log(lengthOfLongestSubstring("aaa"));
+  // var addTwoNumbers = function(l1, l2) {
+  //   var n = 0
+  //   var l = {}
+  //   var h = l
+  //   while((!!l1.val || l1.val === 0) || (!!l2.val || l2.val === 0) || n === 1) {
+  //     if (parseInt(l1.val || 0) + parseInt(l2.val || 0) + n >= 10) {
+  //       h.val = parseInt(l1.val || 0) + parseInt(l2.val || 0) - 10 + n
+  //       n = 1
+  //     } else {
+  //       h.val = parseInt(l1.val || 0) + parseInt(l2.val || 0) + n
+  //       n = 0
+  //     }
+  //     if (!l1.next && !l2.next && n === 0) {
+  //       h.next = null
+  //     } else {
+  //       h.next = {}
+  //       h = h.next
+  //     }
+  //     l1 = l1.next ? l1.next : {}
+  //     l2 = l2.next ? l2.next : {}
+  //
+  //   }
+  //   var nl = {next: null}
+  //   var pNext = {}
+  //   while (l.next) {
+  //     pNext = l.next
+  //     l.next = nl.next
+  //     nl.next = l
+  //     l = pNext
+  //   }
+  //   return l
+  // };
+  // console.log(addTwoNumbers(l1, l2))
 
 
-
-    // var maxArea = function(height) {
-    //   var s = 0
-    //   for (var i = 0; i < height.length; i++) {
-    //     for (var j = height.length - 1; j >= 0; j--) {
-    //       s = Math.max(Math.min(height[i], height[j]) * (j - i), s)
-    //     }
-    //   }
-    //   return s
-    // };
-    // console.log(maxArea([1,8,6,2,5,4,8,3,7]))
-
-
-    // var findMedianSortedArrays = function(nums1, nums2) {
-    //   var len = nums1.length + nums2.length
-    //   var len1 = nums1.length - 1
-    //   var len2 = nums2.length - 1
-    //   var leng1 = nums1.length
-    //   var leng2 = nums2.length
-    //   var a = new Array(len)
-    //   a.fill()
-    //
-    //   if (leng1 === 0) return leng2 % 2 === 0 ? (nums2[leng2 / 2] + nums2[leng2 / 2 - 1]) / 2 : nums2[Math.floor(leng2 / 2)]
-    //   if (leng2 === 0) return leng1 % 2 === 0 ? (nums1[leng1 / 2] + nums1[leng1 / 2 - 1]) / 2 : nums1[Math.floor(leng1 / 2)]
-    //
-    //   len--
-    //   while (len >= Math.floor((nums1.length + nums2.length) / 2) - 1) {
-    //     if (len1 < 0) {
-    //       a[len--] = nums2[len2--]
-    //     } else if (len2 < 0) {
-    //       a[len--] = nums1[len1--]
-    //     } else {
-    //       a[len--] = nums1[len1] >= nums2[len2] ? nums1[len1--] : nums2[len2--]
-    //     }
-    //   }
-    //   return (nums1.length + nums2.length) % 2 === 0 ? (a[len + 1] + a[len + 2]) / 2 : a[len + 2]
-    // };
-    // console.log(findMedianSortedArrays([1, 3], [1, 3, 5]))
+  // var lengthOfLongestSubstring = function(s) {
+  //   var len = 0
+  //   var si = 0
+  //   var str = ''
+  //   for (var i = 0; i < s.length; i++) {
+  //     if (str.indexOf(s[i]) >= 0) {
+  //       str = str.substr(str.indexOf(s[i]) + 1)
+  //     }
+  //     str += s[i]
+  //     len = str.length > len ? str.length : len
+  //   }
+  //   return len
+  // };
+  //
+  // console.log(lengthOfLongestSubstring("aaa"));
 
 
-    // var uniqueOccurrences = function(arr) {
-    //   var len = arr.length - 1
-    //   var obj = {}
-    //   var flag = true
-    //   while (len >= 0) {
-    //     if (obj[arr[len]] === undefined) {
-    //       obj[arr[len--]] = 1
-    //     } else {
-    //       obj[arr[len--]] += 1
-    //     }
-    //   }
-    //   var resL = Object.values(obj)
-    //   for (var i = 0; i < resL.length; i++) {
-    //     if (resL.indexOf(resL[i]) !== resL.lastIndexOf(resL[i])) {
-    //       flag = false
-    //     }
-    //   }
-    //   return flag
-    // };
-    // uniqueOccurrences([1,2,2,1,1,3])
+  // var maxArea = function(height) {
+  //   var s = 0
+  //   for (var i = 0; i < height.length; i++) {
+  //     for (var j = height.length - 1; j >= 0; j--) {
+  //       s = Math.max(Math.min(height[i], height[j]) * (j - i), s)
+  //     }
+  //   }
+  //   return s
+  // };
+  // console.log(maxArea([1,8,6,2,5,4,8,3,7]))
 
 
-    // var arr = ["dog","racecar","car"]
-    // var longestCommonPrefix = function(strs) {
-    //   var comStr = ''
-    //   for (var i = 0; i < strs.length; i++) {
-    //     if (i === 0) {
-    //       comStr = strs[0]
-    //     } else {
-    //       while (strs[i].indexOf(comStr) !== 0) {
-    //         comStr = comStr.substr(0, comStr.length - 1)
-    //       }
-    //     }
-    //   }
-    //   return comStr
-    // };
-    // console.log(longestCommonPrefix(arr))
+  // var findMedianSortedArrays = function(nums1, nums2) {
+  //   var len = nums1.length + nums2.length
+  //   var len1 = nums1.length - 1
+  //   var len2 = nums2.length - 1
+  //   var leng1 = nums1.length
+  //   var leng2 = nums2.length
+  //   var a = new Array(len)
+  //   a.fill()
+  //
+  //   if (leng1 === 0) return leng2 % 2 === 0 ? (nums2[leng2 / 2] + nums2[leng2 / 2 - 1]) / 2 : nums2[Math.floor(leng2 / 2)]
+  //   if (leng2 === 0) return leng1 % 2 === 0 ? (nums1[leng1 / 2] + nums1[leng1 / 2 - 1]) / 2 : nums1[Math.floor(leng1 / 2)]
+  //
+  //   len--
+  //   while (len >= Math.floor((nums1.length + nums2.length) / 2) - 1) {
+  //     if (len1 < 0) {
+  //       a[len--] = nums2[len2--]
+  //     } else if (len2 < 0) {
+  //       a[len--] = nums1[len1--]
+  //     } else {
+  //       a[len--] = nums1[len1] >= nums2[len2] ? nums1[len1--] : nums2[len2--]
+  //     }
+  //   }
+  //   return (nums1.length + nums2.length) % 2 === 0 ? (a[len + 1] + a[len + 2]) / 2 : a[len + 2]
+  // };
+  // console.log(findMedianSortedArrays([1, 3], [1, 3, 5]))
 
 
-    // var letterCombinations = function(digits) {
-    //   var obj ={
-    //     2: 'abc',
-    //     3: 'def',
-    //     4: 'ghi',
-    //     5: 'jkl',
-    //     6: 'mno',
-    //     7: 'pqrs',
-    //     8: 'tuv',
-    //     9: 'wxyz'
-    //   }
-    //   var resList = []
-    //   var i = 0
-    //   var str = ''
-    //   ff(str, i)
-    //   function ff(str, i) {
-    //     obj[digits[i]] && obj[digits[i]].split('').forEach(it => {
-    //       if (i === digits.length - 1) {
-    //         resList.push(str + it)
-    //       } else {
-    //         ff(str + it, i + 1)
-    //       }
-    //     })
-    //   }
-    //   return resList
-    //
-    // };
-    // console.log(letterCombinations('23'))
-
-    // 自己的
-    // var minReorder = function(n, connections) {
-    //   var numMy = 0
-    //   var depMy = new Map()
-    //   depMy.set(0)
-    //   var lenMy = 0
-    //   while(lenMy<connections.length){
-    //     let [t,s] = connections[lenMy]
-    //     if (depMy.has(s)) {
-    //       depMy.set(t)
-    //     } else if (depMy.has(t)) {
-    //       depMy.set(s)
-    //       numMy += 1
-    //     }
-    //     lenMy++
-    //   }
-    //   return numMy
-    //
-    // };
-    // 网上的
-    // var minReorder = function(n, connections) {
-    //   let map = {};
-    //
-    //   for(let i = 0; i < connections.length; i++) {
-    //     let [city1, city2] = connections[i];
-    //
-    //     if(map[city1]) {
-    //       map[city1].push([city2, 1])
-    //     } else {
-    //       map[city1] = [[city2, 1]]
-    //     }
-    //     if(map[city2]) {
-    //       map[city2].push([city1, 0])
-    //     } else {
-    //       map[city2] = [[city1, 0]]
-    //     }
-    //   }
-    //   console.log(map)
-    //   let queue = [0];
-    //   let seen = new Array(n).fill(false);
-    //   let ans = 0;
-    //
-    //   while(queue.length) {
-    //     let top = queue.shift();
-    //     seen[top] = true;
-    //
-    //     for(let [city, cost] of map[top]) {
-    //       if(seen[city]) continue;
-    //
-    //       ans += cost;
-    //       queue.push(city);
-    //     }
-    //   }
-    //
-    //   return ans;
-    // };
-    // var minReorder = function(n, connections) {
-    //   var num = 0
-    //   var res = [0]
-    //   var len = 0
-    //   var from = {}
-    //   var to = {}
-    //   for (var i = 0; i < connections.length; i++) {
-    //     let [t,s] = connections[i]
-    //     if (!to[s]) {
-    //       to[s] = []
-    //     }
-    //     to[s].push(connections[i])
-    //     if (!from[t]) {
-    //       from[t] = []
-    //     }
-    //     from[t].push(connections[i])
-    //
-    //   }
-    //   while (len <= res.length) {
-    //     if (to[res[len]]) {
-    //       to[res[len]].forEach(it => {
-    //         if (!res.includes(it[0])) {
-    //           res.push(it[0])
-    //         }
-    //       })
-    //     }
-    //     if (from[res[len]]) {
-    //       from[res[len]].forEach(it => {
-    //         if (!res.includes(it[1])) {
-    //           num += 1
-    //           res.push(it[1])
-    //         }
-    //       })
-    //     }
-    //     len ++
-    //   }
-    //   return num
-    // };
-    // console.log(minReorder(8,[[0,1],[2,0],[3,0],[4,1],[0,5],[1,6],[0,7]]))
+  // var uniqueOccurrences = function(arr) {
+  //   var len = arr.length - 1
+  //   var obj = {}
+  //   var flag = true
+  //   while (len >= 0) {
+  //     if (obj[arr[len]] === undefined) {
+  //       obj[arr[len--]] = 1
+  //     } else {
+  //       obj[arr[len--]] += 1
+  //     }
+  //   }
+  //   var resL = Object.values(obj)
+  //   for (var i = 0; i < resL.length; i++) {
+  //     if (resL.indexOf(resL[i]) !== resL.lastIndexOf(resL[i])) {
+  //       flag = false
+  //     }
+  //   }
+  //   return flag
+  // };
+  // uniqueOccurrences([1,2,2,1,1,3])
 
 
-    // var trap = function(height) {
-    //   var res = []
-    //   var resE = []
-    //   var total = 0
-    //   var max = 0
-    //   var maxI = 0
-    //   height.forEach((it, index) => {
-    //     if (it >= max) {
-    //       max = it
-    //       maxI = index
-    //     }
-    //   })
-    //   if (maxI <= 2) {
-    //     if (maxI === 0) {
-    //       res = [0]
-    //     } else {
-    //       if (height[0] === height[maxI]) {
-    //         res = [1, maxI]
-    //       } else {
-    //         res = [0, maxI]
-    //       }
-    //
-    //     }
-    //   } else {
-    //     for (var j = 1;j<maxI;j++) {
-    //       if (j === 2 || j === 1) {
-    //         res.push(j)
-    //       } else {
-    //         if(height[j] === height[j - 1]) {
-    //           continue
-    //         }
-    //         if (height[j] > Math.min(height[res[0]], height[res[1]])) {
-    //           if (height[res[0]] > height[res[1]]) {
-    //             res[1] = j
-    //           } else {
-    //             res[0] = j
-    //           }
-    //         } else if (height[j] === Math.min(height[res[0]], height[res[1]])) {
-    //           resE.push(j)
-    //         }
-    //       }
-    //     }
-    //   }
-    //
-    //   if (height.length - 1 - maxI <= 3) {
-    //     // res = res.concat([maxI, height.length - 1])
-    //   }
-    //   for (var m = maxI + 1;m<height.length - 1;m++) {
-    //       if(height[m] === height[m - 1]) {
-    //         continue
-    //       }
-    //       if (res.length <= 1 && m === maxI + 1) {
-    //         res.push(maxI + 1)
-    //       }
-    //       if (height[m] > (res[1] ? Math.min(height[res[0]], height[res[1]]) : height[res[0]])) {
-    //         if (height[res[0]] > height[res[1]]) {
-    //           res[1] = m
-    //         } else {
-    //           res[0] = m
-    //         }
-    //       } else if (height[m] === Math.min(height[res[0]], height[res[1]])) {
-    //         resE.push(m)
-    //       }
-    //   }
-    //
-    //   resE.forEach((it) => {
-    //     if (height[it] === Math.min(height[res[0]], height[res[1]])) {
-    //       res.push(it)
-    //     }
-    //
-    //   })
-    //   console.log(res)
-    //   var top = 0
-    //   var bot = height.length - 1
-    //   while (height[top] <= height[top + 1]) {
-    //     top++
-    //   }
-    //   while (height[bot] <= height[bot - 1]) {
-    //     bot--
-    //   }
-    //   if (!res.includes(top)) {
-    //     res.push(top)
-    //   }
-    //   if (!res.includes(bot)) {
-    //     res.push(bot)
-    //   }
-    //   if (!res.includes(maxI)) {
-    //     res.push(maxI)
-    //   }
-    //
-    //   res.sort((a, b) => a-b)
-    //   var mIndex = res.indexOf(maxI)
-    //   var removeL = []
-    //   for (var s = 0; s < mIndex; s++) {
-    //     for (var q = s; q < mIndex; q++) {
-    //       if (height[res[s]] > height[res[q]]) {
-    //         if (!removeL.includes(q)) {
-    //           removeL.push(q)
-    //         }
-    //       }
-    //     }
-    //   }
-    //   for (var z = mIndex + 1; z < res.length; z++) {
-    //     for (var x = z; x < res.length; x++) {
-    //       if (height[res[z]] < height[res[x]]) {
-    //         if (!removeL.includes(z)) {
-    //           removeL.push(z)
-    //         }
-    //       }
-    //     }
-    //   }
-    //   removeL.reverse().forEach(it => {
-    //     res.splice(it, 1)
-    //   })
-    //   console.log(res)
-    //   // if (res.indexOf(maxI - 1) > -1 && height[res[res.indexOf(maxI - 1)]] <= height[res[res.indexOf(maxI - 1) - 1]]) {
-    //   //   res.splice(res.indexOf(maxI - 1), 1)
-    //   // }
-    //   // if (res.indexOf(maxI + 1) > -1 && height[res[res.indexOf(maxI + 1)]] <= height[res[res.indexOf(maxI + 1) + 1]])  {
-    //   //   res.splice(res.indexOf(maxI + 1), 1)
-    //   // }
-    //   // if (height[res[res.length - 1]] > height[res[res.length - 2]]) {
-    //   //   res.splice(res.length - 2, 1)
-    //   // }
-    //   // if (height[res[0]] > height[res[1]] && res.length > 2 && Math.abs(res[0] - res[1]) <= 1) {
-    //   //   res.splice(1, 1)
-    //   // }
-    //   // var min = Math.min(height[res[0]], height[res[res.length - 1]])
-    //   // for (var r = 1; r < res.length - 1; r++) {
-    //   //   if (height[res[r]] < min) {
-    //   //     res.splice(r, 1)
-    //   //     r = 1
-    //   //   }
-    //   //
-    //   // }
-    //
-    //   if (height.length <= 3) {
-    //     res = [0, 2]
-    //   }
-    //   // console.log(res)
-    //   return res.reduce((h, m, id) => {
-    //     if (id !== 0) {
-    //       var ar = height.slice(res[id - 1], m + 1)
-    //       return h + getS(ar)
-    //     } else {
-    //       return h
-    //     }
-    //   }, total)
-    //   function getS(arr) {
-    //     if (arr.length < 2) return 0
-    //     var h = Math.min(arr[0], arr[arr.length - 1])
-    //     var b = arr.length - 2
-    //     var s = h * b
-    //     var l = 1
-    //     while (l < arr.length - 1) {
-    //       s -= arr[l] <= h ? arr[l] : h
-    //       l++
-    //     }
-    //     return s
-    //   }
-    // };
+  // var arr = ["dog","racecar","car"]
+  // var longestCommonPrefix = function(strs) {
+  //   var comStr = ''
+  //   for (var i = 0; i < strs.length; i++) {
+  //     if (i === 0) {
+  //       comStr = strs[0]
+  //     } else {
+  //       while (strs[i].indexOf(comStr) !== 0) {
+  //         comStr = comStr.substr(0, comStr.length - 1)
+  //       }
+  //     }
+  //   }
+  //   return comStr
+  // };
+  // console.log(longestCommonPrefix(arr))
 
 
+  // var letterCombinations = function(digits) {
+  //   var obj ={
+  //     2: 'abc',
+  //     3: 'def',
+  //     4: 'ghi',
+  //     5: 'jkl',
+  //     6: 'mno',
+  //     7: 'pqrs',
+  //     8: 'tuv',
+  //     9: 'wxyz'
+  //   }
+  //   var resList = []
+  //   var i = 0
+  //   var str = ''
+  //   ff(str, i)
+  //   function ff(str, i) {
+  //     obj[digits[i]] && obj[digits[i]].split('').forEach(it => {
+  //       if (i === digits.length - 1) {
+  //         resList.push(str + it)
+  //       } else {
+  //         ff(str + it, i + 1)
+  //       }
+  //     })
+  //   }
+  //   return resList
+  //
+  // };
+  // console.log(letterCombinations('23'))
 
-    // var trap = function(height) {
-    //   if (height.length <= 2) return 0
-    //   var max = 0
-    //   var maxI = 0
-    //   var area = 0
-    //   height.forEach((it, index) => {
-    //     if (it > max) {
-    //       max = it
-    //       maxI = index
-    //     }
-    //   })
-    //   var fM = 0
-    //   for (var i = 0; i <= maxI; i++) {
-    //     if (height[i] > fM) {
-    //       fM = height[i]
-    //     } else {
-    //       area += fM - height[i]
-    //     }
-    //   }
-    //   var lM = 0
-    //   for (var j = height.length - 1; j >= maxI; j--) {
-    //     if (height[j] > lM) {
-    //       lM = height[j]
-    //     } else {
-    //       area += lM - height[j]
-    //     }
-    //   }
-    //  return area
-    //
-    // };
-    // console.log(trap([6,4,2,0,3,2,0,3,1,4,5,3,2,7,5,3,0,1,2,1,3,4,6,8,1,3]))
-    // console.log(trap([2,1,0,2]))
-    // console.log(trap([4,1,6,4,4,9,3,8,4]))
-    // console.log(trap([5,5,1,7,1,1,5,2,7,6]))
-    // console.log(trap([5,4,1,2]))
-    // console.log(trap([0,7,1,4,6]))
-    // console.log(trap([2,8,5,5,6,1,7,4,5]))
-    // console.log(trap([9,6,8,8,5,6,3]))
-    // console.log(trap([4,8,3,7,1,9,5,2,3,6]))
-    // console.log(trap([4,2,0,3,2,5]))
-    // console.log(trap([9,8,9,5,8,8,8,0,4]))
-    // console.log(trap([3,1,4,7,5,0,1,5,1,5,9,6,8,9,3,3,1]))
-    // console.log(trap([4,2,3,5,1,9,9,6]))
-    // console.log(trap([3,0,5,3,3,6,5,0,3,6]))
-    // console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
-
-
-
-    // 数组全排列
-    // function Permutation(arr) {
-    //   this.len = 0;    // 存储全排列次数
-    //   this.arr = arr.concat();   // 传入的数组
-    //   this.result = [];    // 存储全排列结果
-    //
-    //   // 首次创建对象时初始化方法
-    //   if (typeof Permutation.run == 'undefined') {
-    //     Permutation.prototype.start = function() {
-    //       this.run(0);
-    //     }
-    //
-    //     // 递归函数(核心方法)，index为数组下标
-    //     Permutation.prototype.run = function(index) {
-    //       // 单遍历到数组末端时，将结果储存在result数组中，全排列次数加1
-    //       if (index == this.arr.length - 1) {
-    //         this.result.push(this.arr.slice());
-    //         this.len++;
-    //         return;
-    //       }
-    //
-    //       for(let i = index; i < this.arr.length; i++) {
-    //         this.swap(this.arr, index, i);      // 与下标为i的元素交换位置
-    //         this.run(index + 1);                // 剩下元素全排列
-    //         this.swap(this.arr, index, i);      // 复原数组
-    //       }
-    //     }
-    //
-    //     // 交换位置
-    //     Permutation.prototype.swap = function(array, i, j) {
-    //       var t;
-    //       t = array[i];
-    //       array[i] = array[j];
-    //       array[j] = t;
-    //     }
-    //   }
-    // }
-    //
-    // var per = new Permutation(['A', 'B', 'C']);
-    // per.start();
-    // console.log(per.result);
-
-
-    // var spiralMatrixIII = function(R, C, r0, c0) {
-    //   // R 纵 C 横
-    //   var sR = r0
-    //   var sC = c0
-    //   var flagT = 1 //1 为 东 2 为南 3为西 4 为北
-    //   var res = [[r0, c0]]
-    //   var step = 1
-    //   var flag = 0
-    //   while (res.length < R * C) {
-    //     if (flag < 2) {
-    //       flag ++
-    //       for (var i = 1; i <= step; i++) {
-    //         ci()
-    //       }
-    //       flagT = (++flagT) % 4
-    //     } else {
-    //       step++
-    //       flag = 0
-    //     }
-    //
-    //   }
-    //   function ci() {
-    //     switch (flagT) {
-    //       case 1:
-    //         sC+=1
-    //         break
-    //       case 2:
-    //         sR+=1
-    //         break
-    //       case 3:
-    //         sC-=1
-    //         break
-    //       case 4:
-    //         sR-=1
-    //         break
-    //       default:
-    //         sR-=1
-    //         break
-    //     }
-    //     if (0 <= sC && sC <= C - 1 && 0 <= sR && sR <= R - 1) {
-    //       res.push([sR, sC])
-    //     }
-    //
-    //   }
-    //   return res
-    // };
-    // console.log(spiralMatrixIII(5, 6, 1, 4))
-
-    // function sort(arr){
-    //     var res = Array(arr.length).fill('')
-    //     var a = ''
-    //     arr.forEach(it => {
-    //         while(1) {
-    //             a = Math.floor(Math.random() * arr.length)
-    //             if (!res[a]) {
-    //                 res[a] = it
-    //                 break
-    //             }
-    //         }
-    //     })
-    //     return res
-    // }
-    //
-    // console.log(sort([1, 2, 3, 4, 5, 6]))
-    // console.log(findMin([2, 3, 4]))
-
-    // 73 矩阵置零
-    // var setZeroes = function(matrix) {
-    //     var res = []
-    //     matrix.forEach((itY, inY) => {
-    //         itY.forEach((itX, inX) => {
-    //             if (itX === 0) {
-    //                 var ar = [inY, inX]
-    //                 res.push(ar)
-    //             }
-    //         })
-    //     })
-    //     res.forEach(it => {
-    //         matrix.forEach((itY, inY) => {
-    //             itY.forEach((itX, inX) => {
-    //                 if (inY === it[0] || inX === it[1]) {
-    //                     matrix[inY][inX] = 0
-    //                 }
-    //             })
-    //         })
-    //     })
-    //     return  matrix
-    // };
-    // console.log(setZeroes([
-    //     [1, 1, 1],
-    //     [1, 0, 1],
-    //     [1, 1, 1]
-    // ]))
-
-    // 1529. 灯泡开关
-    // var minFlips = function(target) {
-    //     var initStatus = '0'
-    //     var changeNum = 0
-    //     for(var i = 0;i<target.length;i++) {
-    //         if (target[i] !== initStatus){
-    //             changeNum ++
-    //             initStatus = initStatus === '0' ? '1' :'0'
-    //         }
-    //     }
-    //     return changeNum
-    // };
-    // console.log(minFlips('001011101'))
+  // 自己的
+  // var minReorder = function(n, connections) {
+  //   var numMy = 0
+  //   var depMy = new Map()
+  //   depMy.set(0)
+  //   var lenMy = 0
+  //   while(lenMy<connections.length){
+  //     let [t,s] = connections[lenMy]
+  //     if (depMy.has(s)) {
+  //       depMy.set(t)
+  //     } else if (depMy.has(t)) {
+  //       depMy.set(s)
+  //       numMy += 1
+  //     }
+  //     lenMy++
+  //   }
+  //   return numMy
+  //
+  // };
+  // 网上的
+  // var minReorder = function(n, connections) {
+  //   let map = {};
+  //
+  //   for(let i = 0; i < connections.length; i++) {
+  //     let [city1, city2] = connections[i];
+  //
+  //     if(map[city1]) {
+  //       map[city1].push([city2, 1])
+  //     } else {
+  //       map[city1] = [[city2, 1]]
+  //     }
+  //     if(map[city2]) {
+  //       map[city2].push([city1, 0])
+  //     } else {
+  //       map[city2] = [[city1, 0]]
+  //     }
+  //   }
+  //   console.log(map)
+  //   let queue = [0];
+  //   let seen = new Array(n).fill(false);
+  //   let ans = 0;
+  //
+  //   while(queue.length) {
+  //     let top = queue.shift();
+  //     seen[top] = true;
+  //
+  //     for(let [city, cost] of map[top]) {
+  //       if(seen[city]) continue;
+  //
+  //       ans += cost;
+  //       queue.push(city);
+  //     }
+  //   }
+  //
+  //   return ans;
+  // };
+  // var minReorder = function(n, connections) {
+  //   var num = 0
+  //   var res = [0]
+  //   var len = 0
+  //   var from = {}
+  //   var to = {}
+  //   for (var i = 0; i < connections.length; i++) {
+  //     let [t,s] = connections[i]
+  //     if (!to[s]) {
+  //       to[s] = []
+  //     }
+  //     to[s].push(connections[i])
+  //     if (!from[t]) {
+  //       from[t] = []
+  //     }
+  //     from[t].push(connections[i])
+  //
+  //   }
+  //   while (len <= res.length) {
+  //     if (to[res[len]]) {
+  //       to[res[len]].forEach(it => {
+  //         if (!res.includes(it[0])) {
+  //           res.push(it[0])
+  //         }
+  //       })
+  //     }
+  //     if (from[res[len]]) {
+  //       from[res[len]].forEach(it => {
+  //         if (!res.includes(it[1])) {
+  //           num += 1
+  //           res.push(it[1])
+  //         }
+  //       })
+  //     }
+  //     len ++
+  //   }
+  //   return num
+  // };
+  // console.log(minReorder(8,[[0,1],[2,0],[3,0],[4,1],[0,5],[1,6],[0,7]]))
 
 
-    // 获取节点路径
-    // const exampleTree = [
-    //     { id: 1},
-    //     { id: 2, pid: 1},
-    //     { id: 3, pid: 1},
-    //     { id: 4, pid: 2},
-    //     { id: 5, pid: 3},
-    //     { id: 6, pid: 5}
-    // ]
-    // function getTree(arr) {
-    //     var arrs = []
-    //     var ajObj = {}
-    //     arr.forEach((item) => {
-    //         if (!item.pid) {
-    //             var itemIndex = arrs.push(item)
-    //             ajObj[item.id] = [itemIndex]
-    //         }
-    //     })
-    //     var res = arr.reduce((h, m) => {
-    //         if (m.pid) {
-    //             if(ajObj[m.pid]){
-    //
-    //             } else {
-    //                 ajObj[m.pid] = []
-    //                 foo(h, m, ajObj)
-    //             }
-    //
-    //         }
-    //
-    //         function foo(arr, cur, addr) {
-    //             arr.forEach((item, index) => {
-    //                 if (item.id === cur.pid) {
-    //                     addr[cur.pid].push(index)
-    //                     if (!item.children) {
-    //                         item.children = []
-    //                     }
-    //                     item.children.push(cur)
-    //                     return
-    //                 } else if (item.children) {
-    //                     addr[cur.pid].push(index)
-    //                     foo(item.children, cur, addr)
-    //                     addr[cur.pid].pop()
-    //                 }
-    //             })
-    //         }
-    //
-    //         return h
-    //     }, arrs)
-    //     console.log(ajObj)
-    //     return res
-    // }
-    //
-    // console.log(getTree(exampleTree))
+  // var trap = function(height) {
+  //   var res = []
+  //   var resE = []
+  //   var total = 0
+  //   var max = 0
+  //   var maxI = 0
+  //   height.forEach((it, index) => {
+  //     if (it >= max) {
+  //       max = it
+  //       maxI = index
+  //     }
+  //   })
+  //   if (maxI <= 2) {
+  //     if (maxI === 0) {
+  //       res = [0]
+  //     } else {
+  //       if (height[0] === height[maxI]) {
+  //         res = [1, maxI]
+  //       } else {
+  //         res = [0, maxI]
+  //       }
+  //
+  //     }
+  //   } else {
+  //     for (var j = 1;j<maxI;j++) {
+  //       if (j === 2 || j === 1) {
+  //         res.push(j)
+  //       } else {
+  //         if(height[j] === height[j - 1]) {
+  //           continue
+  //         }
+  //         if (height[j] > Math.min(height[res[0]], height[res[1]])) {
+  //           if (height[res[0]] > height[res[1]]) {
+  //             res[1] = j
+  //           } else {
+  //             res[0] = j
+  //           }
+  //         } else if (height[j] === Math.min(height[res[0]], height[res[1]])) {
+  //           resE.push(j)
+  //         }
+  //       }
+  //     }
+  //   }
+  //
+  //   if (height.length - 1 - maxI <= 3) {
+  //     // res = res.concat([maxI, height.length - 1])
+  //   }
+  //   for (var m = maxI + 1;m<height.length - 1;m++) {
+  //       if(height[m] === height[m - 1]) {
+  //         continue
+  //       }
+  //       if (res.length <= 1 && m === maxI + 1) {
+  //         res.push(maxI + 1)
+  //       }
+  //       if (height[m] > (res[1] ? Math.min(height[res[0]], height[res[1]]) : height[res[0]])) {
+  //         if (height[res[0]] > height[res[1]]) {
+  //           res[1] = m
+  //         } else {
+  //           res[0] = m
+  //         }
+  //       } else if (height[m] === Math.min(height[res[0]], height[res[1]])) {
+  //         resE.push(m)
+  //       }
+  //   }
+  //
+  //   resE.forEach((it) => {
+  //     if (height[it] === Math.min(height[res[0]], height[res[1]])) {
+  //       res.push(it)
+  //     }
+  //
+  //   })
+  //   console.log(res)
+  //   var top = 0
+  //   var bot = height.length - 1
+  //   while (height[top] <= height[top + 1]) {
+  //     top++
+  //   }
+  //   while (height[bot] <= height[bot - 1]) {
+  //     bot--
+  //   }
+  //   if (!res.includes(top)) {
+  //     res.push(top)
+  //   }
+  //   if (!res.includes(bot)) {
+  //     res.push(bot)
+  //   }
+  //   if (!res.includes(maxI)) {
+  //     res.push(maxI)
+  //   }
+  //
+  //   res.sort((a, b) => a-b)
+  //   var mIndex = res.indexOf(maxI)
+  //   var removeL = []
+  //   for (var s = 0; s < mIndex; s++) {
+  //     for (var q = s; q < mIndex; q++) {
+  //       if (height[res[s]] > height[res[q]]) {
+  //         if (!removeL.includes(q)) {
+  //           removeL.push(q)
+  //         }
+  //       }
+  //     }
+  //   }
+  //   for (var z = mIndex + 1; z < res.length; z++) {
+  //     for (var x = z; x < res.length; x++) {
+  //       if (height[res[z]] < height[res[x]]) {
+  //         if (!removeL.includes(z)) {
+  //           removeL.push(z)
+  //         }
+  //       }
+  //     }
+  //   }
+  //   removeL.reverse().forEach(it => {
+  //     res.splice(it, 1)
+  //   })
+  //   console.log(res)
+  //   // if (res.indexOf(maxI - 1) > -1 && height[res[res.indexOf(maxI - 1)]] <= height[res[res.indexOf(maxI - 1) - 1]]) {
+  //   //   res.splice(res.indexOf(maxI - 1), 1)
+  //   // }
+  //   // if (res.indexOf(maxI + 1) > -1 && height[res[res.indexOf(maxI + 1)]] <= height[res[res.indexOf(maxI + 1) + 1]])  {
+  //   //   res.splice(res.indexOf(maxI + 1), 1)
+  //   // }
+  //   // if (height[res[res.length - 1]] > height[res[res.length - 2]]) {
+  //   //   res.splice(res.length - 2, 1)
+  //   // }
+  //   // if (height[res[0]] > height[res[1]] && res.length > 2 && Math.abs(res[0] - res[1]) <= 1) {
+  //   //   res.splice(1, 1)
+  //   // }
+  //   // var min = Math.min(height[res[0]], height[res[res.length - 1]])
+  //   // for (var r = 1; r < res.length - 1; r++) {
+  //   //   if (height[res[r]] < min) {
+  //   //     res.splice(r, 1)
+  //   //     r = 1
+  //   //   }
+  //   //
+  //   // }
+  //
+  //   if (height.length <= 3) {
+  //     res = [0, 2]
+  //   }
+  //   // console.log(res)
+  //   return res.reduce((h, m, id) => {
+  //     if (id !== 0) {
+  //       var ar = height.slice(res[id - 1], m + 1)
+  //       return h + getS(ar)
+  //     } else {
+  //       return h
+  //     }
+  //   }, total)
+  //   function getS(arr) {
+  //     if (arr.length < 2) return 0
+  //     var h = Math.min(arr[0], arr[arr.length - 1])
+  //     var b = arr.length - 2
+  //     var s = h * b
+  //     var l = 1
+  //     while (l < arr.length - 1) {
+  //       s -= arr[l] <= h ? arr[l] : h
+  //       l++
+  //     }
+  //     return s
+  //   }
+  // };
 
 
-    // 830. 较大分组的位置
-
-    // var largeGroupPositions = function(s) {
-    //     var fu = '';
-    //     var res = [];
-    //     var resArr = []
-    //     var result = []
-    //     var max = 0
-    //     for (var i = 0; i < s.length; i++) {
-    //         if (fu !== s[i]) {
-    //             fu = s[i];
-    //             res[0] = i
-    //         } else {
-    //             res[1] = i
-    //             if (resArr[resArr.length - 1] && resArr[resArr.length - 1][0] === res[0]) {
-    //                 resArr.pop();
-    //             }
-    //             resArr.push([...res])
-    //         }
-    //     }
-    //     console.log(resArr);
-    //     resArr.forEach(it => {
-    //         if (it[1] - it[0] >= 2) {
-    //             result.push(it)
-    //         }
-    //     })
-    //     return result
-    // };
-    // var largeGroupPositions = function(s) {
-    //     var res = [];
-    //     var pot = 0;
-    //     var fu = '';
-    //     for (var i = 0; i < s.length; i++) {
-    //         if (fu !== s[i]) {
-    //             fu = s[i];
-    //             if ((i - 1 - pot) >= 2) {
-    //                 res.push([pot, i - 1])
-    //             }
-    //             pot = i
-    //         } else {
-    //             if (i === s.length - 1 && i - pot >= 2) {
-    //                 res.push([pot, i])
-    //             }
-    //         }
-    //     }
-    //     return res
-    // };
-    // console.log(largeGroupPositions("aba"));
+  // var trap = function(height) {
+  //   if (height.length <= 2) return 0
+  //   var max = 0
+  //   var maxI = 0
+  //   var area = 0
+  //   height.forEach((it, index) => {
+  //     if (it > max) {
+  //       max = it
+  //       maxI = index
+  //     }
+  //   })
+  //   var fM = 0
+  //   for (var i = 0; i <= maxI; i++) {
+  //     if (height[i] > fM) {
+  //       fM = height[i]
+  //     } else {
+  //       area += fM - height[i]
+  //     }
+  //   }
+  //   var lM = 0
+  //   for (var j = height.length - 1; j >= maxI; j--) {
+  //     if (height[j] > lM) {
+  //       lM = height[j]
+  //     } else {
+  //       area += lM - height[j]
+  //     }
+  //   }
+  //  return area
+  //
+  // };
+  // console.log(trap([6,4,2,0,3,2,0,3,1,4,5,3,2,7,5,3,0,1,2,1,3,4,6,8,1,3]))
+  // console.log(trap([2,1,0,2]))
+  // console.log(trap([4,1,6,4,4,9,3,8,4]))
+  // console.log(trap([5,5,1,7,1,1,5,2,7,6]))
+  // console.log(trap([5,4,1,2]))
+  // console.log(trap([0,7,1,4,6]))
+  // console.log(trap([2,8,5,5,6,1,7,4,5]))
+  // console.log(trap([9,6,8,8,5,6,3]))
+  // console.log(trap([4,8,3,7,1,9,5,2,3,6]))
+  // console.log(trap([4,2,0,3,2,5]))
+  // console.log(trap([9,8,9,5,8,8,8,0,4]))
+  // console.log(trap([3,1,4,7,5,0,1,5,1,5,9,6,8,9,3,3,1]))
+  // console.log(trap([4,2,3,5,1,9,9,6]))
+  // console.log(trap([3,0,5,3,3,6,5,0,3,6]))
+  // console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
 
 
-
-    //  1700. 无法吃午餐的学生数量
-    // var countStudents = function(students, sandwiches) {
-    //
-    //     var sl = students.length;
-    //     var res = -1;
-    //     while (sl !== res) {
-    //         if (res !== -1) {
-    //             sl = res
-    //         }
-    //         res = count()
-    //     }
-    //
-    //     return res;
-    //
-    //     function count() {
-    //         var len = students.length;
-    //         var num = 0;
-    //         while (num < len) {
-    //             num ++
-    //             if (students[0] === sandwiches[0]) {
-    //                 students.shift();
-    //                 sandwiches.shift();
-    //             } else {
-    //                 students.push(students.shift());
-    //             }
-    //         }
-    //         return students.length
-    //     }
-    //
-    //
-    // };
-    // console.log(countStudents([1,1,0,0], [0,1,0,1]));
-    // console.log(countStudents([1,1,1,0,0,1], [1,0,0,0,1,1]));
-
-
-
-    //  1450. 在既定时间做作业的学生人数
-    // var busyStudent = function(startTime, endTime, queryTime) {
-    //     var num = 0
-    //     for (var i = 0;i < startTime.length; i++) {
-    //         if (queryTime >= startTime[i] && queryTime <= endTime[i]){
-    //             num ++
-    //         }
-    //     }
-    //     return num
-    // };
-    // console.log(busyStudent([9, 8, 7, 6, 5, 4, 3, 2, 1], [10, 10, 10, 10, 10, 10, 10, 10, 10], 5));
+  // 数组全排列
+  // function Permutation(arr) {
+  //   this.len = 0;    // 存储全排列次数
+  //   this.arr = arr.concat();   // 传入的数组
+  //   this.result = [];    // 存储全排列结果
+  //
+  //   // 首次创建对象时初始化方法
+  //   if (typeof Permutation.run == 'undefined') {
+  //     Permutation.prototype.start = function() {
+  //       this.run(0);
+  //     }
+  //
+  //     // 递归函数(核心方法)，index为数组下标
+  //     Permutation.prototype.run = function(index) {
+  //       // 单遍历到数组末端时，将结果储存在result数组中，全排列次数加1
+  //       if (index == this.arr.length - 1) {
+  //         this.result.push(this.arr.slice());
+  //         this.len++;
+  //         return;
+  //       }
+  //
+  //       for(let i = index; i < this.arr.length; i++) {
+  //         this.swap(this.arr, index, i);      // 与下标为i的元素交换位置
+  //         this.run(index + 1);                // 剩下元素全排列
+  //         this.swap(this.arr, index, i);      // 复原数组
+  //       }
+  //     }
+  //
+  //     // 交换位置
+  //     Permutation.prototype.swap = function(array, i, j) {
+  //       var t;
+  //       t = array[i];
+  //       array[i] = array[j];
+  //       array[j] = t;
+  //     }
+  //   }
+  // }
+  //
+  // var per = new Permutation(['A', 'B', 'C']);
+  // per.start();
+  // console.log(per.result);
 
 
-    // 463. 岛屿的周长
-    // var islandPerimeter = function(grid) {
-    //     var res = 0
-    //     grid.forEach((it, id) => {
-    //         it.forEach((item, index) => {
-    //             if (item === 1) {
-    //                 res += foo(id, index)
-    //             }
-    //         })
-    //     });
-    //
-    //     return res;
-    //
-    //     function foo(r, c) {
-    //         var num = 4;
-    //         if (grid[r] && grid[r][c-1] === 1) {
-    //             num--
-    //         }
-    //         if (grid[r] && grid[r][c+1] === 1) {
-    //             num--
-    //         }
-    //         if (grid[r - 1] && grid[r - 1][c] === 1) {
-    //             num--
-    //         }
-    //         if (grid[r + 1] && grid[r + 1][c] === 1) {
-    //             num--
-    //         }
-    //         return num
-    //     }
-    // };
-    // console.log(islandPerimeter([[1]]));
+  // var spiralMatrixIII = function(R, C, r0, c0) {
+  //   // R 纵 C 横
+  //   var sR = r0
+  //   var sC = c0
+  //   var flagT = 1 //1 为 东 2 为南 3为西 4 为北
+  //   var res = [[r0, c0]]
+  //   var step = 1
+  //   var flag = 0
+  //   while (res.length < R * C) {
+  //     if (flag < 2) {
+  //       flag ++
+  //       for (var i = 1; i <= step; i++) {
+  //         ci()
+  //       }
+  //       flagT = (++flagT) % 4
+  //     } else {
+  //       step++
+  //       flag = 0
+  //     }
+  //
+  //   }
+  //   function ci() {
+  //     switch (flagT) {
+  //       case 1:
+  //         sC+=1
+  //         break
+  //       case 2:
+  //         sR+=1
+  //         break
+  //       case 3:
+  //         sC-=1
+  //         break
+  //       case 4:
+  //         sR-=1
+  //         break
+  //       default:
+  //         sR-=1
+  //         break
+  //     }
+  //     if (0 <= sC && sC <= C - 1 && 0 <= sR && sR <= R - 1) {
+  //       res.push([sR, sC])
+  //     }
+  //
+  //   }
+  //   return res
+  // };
+  // console.log(spiralMatrixIII(5, 6, 1, 4))
 
-    // 189. 旋转数组
-    // var rotate = function(nums, k) {
-    //     var start = 0;
-    //     while (start < k) {
-    //         start++
-    //         nums.unshift(nums.pop());
-    //     }
-    //     return nums
-    // };
-    // console.log(rotate([1,2,3,4,5,6,7], 2));
+  // function sort(arr){
+  //     var res = Array(arr.length).fill('')
+  //     var a = ''
+  //     arr.forEach(it => {
+  //         while(1) {
+  //             a = Math.floor(Math.random() * arr.length)
+  //             if (!res[a]) {
+  //                 res[a] = it
+  //                 break
+  //             }
+  //         }
+  //     })
+  //     return res
+  // }
+  //
+  // console.log(sort([1, 2, 3, 4, 5, 6]))
+  // console.log(findMin([2, 3, 4]))
 
+  // 73 矩阵置零
+  // var setZeroes = function(matrix) {
+  //     var res = []
+  //     matrix.forEach((itY, inY) => {
+  //         itY.forEach((itX, inX) => {
+  //             if (itX === 0) {
+  //                 var ar = [inY, inX]
+  //                 res.push(ar)
+  //             }
+  //         })
+  //     })
+  //     res.forEach(it => {
+  //         matrix.forEach((itY, inY) => {
+  //             itY.forEach((itX, inX) => {
+  //                 if (inY === it[0] || inX === it[1]) {
+  //                     matrix[inY][inX] = 0
+  //                 }
+  //             })
+  //         })
+  //     })
+  //     return  matrix
+  // };
+  // console.log(setZeroes([
+  //     [1, 1, 1],
+  //     [1, 0, 1],
+  //     [1, 1, 1]
+  // ]))
 
-    // 210. 课程表 II  没做出来 是一道图的问题
-    // var findOrder = function(numCourses, prerequisites) {
-    //     if (prerequisites.length === 0) {
-    //         var arr = new Array(numCourses).fill();
-    //         return (arr.map((it, d) => d)).reverse();
-    //     }
-    //     var res = [];
-    //     var tar = null;
-    //     for (const x of prerequisites) {
-    //         if (res.length === 0) {
-    //             res = res.concat([x[1], x[0]])
-    //         } else if (res.length === numCourses) {
-    //             return res
-    //         } else if (x[1] === res[res.length - 1]) {
-    //
-    //             res.push(x[0])
-    //         }
-    //         if (tar === x[0]) {
-    //             var ind = res.indexOf(x[0]);
-    //             res.splice(ind, 0, x[1])
-    //         }
-    //         tar = x[0]
-    //     }
-    //     return res
-    //
-    // };
-    // console.log(findOrder(3, []));
-
-
-    // 200. 岛屿数量
-    // var numIslands = function(grid) {
-    //     var num = 0;
-    //     grid.forEach((it, r) => {
-    //         it.forEach((item, c) => {
-    //             if (item === '1') {
-    //                 foo(r, c)
-    //                 num++
-    //                 // console.log(foo(r, c), r, c);
-    //             }
-    //         })
-    //     })
-    //
-    //     function foo(r, c) {
-    //         if (grid[r] && grid[r][c - 1] === '1') {
-    //             grid[r][c - 1] = 1;
-    //             foo(r, c - 1);
-    //         }
-    //         if (grid[r] && grid[r][c + 1] === '1') {
-    //             grid[r][c + 1] = 1;
-    //             foo(r, c + 1);
-    //         }
-    //         if (grid[r - 1] && grid[r - 1][c] === '1') {
-    //             grid[r - 1][c] = 1;
-    //             foo(r - 1, c);
-    //         }
-    //         if (grid[r + 1] && grid[r + 1][c] === '1') {
-    //             grid[r + 1][c] = 1;
-    //             foo(r + 1, c);
-    //         }
-    //
-    //
-    //     }
-    //
-    //     return num
-    // };
-    // // console.log(numIslands([
-    // //     ["1","1","0","0","0"],
-    // //     ["1","1","0","0","0"],
-    // //     ["0","0","1","0","0"],
-    // //     ["0","0","0","1","1"]
-    // // ]));
-    // console.log(numIslands([
-    //     ["1","1","1","1","0"],
-    //     ["1","1","0","1","0"],
-    //     ["1","1","0","0","0"],
-    //     ["0","0","0","0","0"]
-    // ]));
+  // 1529. 灯泡开关
+  // var minFlips = function(target) {
+  //     var initStatus = '0'
+  //     var changeNum = 0
+  //     for(var i = 0;i<target.length;i++) {
+  //         if (target[i] !== initStatus){
+  //             changeNum ++
+  //             initStatus = initStatus === '0' ? '1' :'0'
+  //         }
+  //     }
+  //     return changeNum
+  // };
+  // console.log(minFlips('001011101'))
 
 
-    // 1584. 连接所有点的最小费用
-    // var minCostConnectPoints = function(points) {
-    //     // let num = 0;
-    //     // points.forEach(it => {
-    //     //     if (!it[3]) {
-    //     //         if (num === 0) {
-    //     //             it[3] = 1;
-    //     //         }
-    //     //         points.forEach(item => {
-    //     //             if (!item[3]) {
-    //     //
-    //     //             }
-    //     //         })
-    //     //     }
-    //     // })
-    //
-    //     let num = 0;
-    //     points.sort(function(a,b){return a[0]+a[1] -b[0]-b[1]});
-    //     console.log(points);
-    //     points.forEach( (it, idx)=> {
-    //         if (idx !== 0) {
-    //             num += Math.abs(it[0] - points[idx - 1][0]) + Math.abs(it[1] - points[idx - 1][1]);
-    //         }
-    //     });
-    //     return num;
-    // };
-    // console.log(minCostConnectPoints([[0,0],[2,2],[3,10],[5,2],[7,0]]));
+  // 获取节点路径
+  const exampleTree = [
+    {id: 1},
+    {id: 2, pid: 1},
+    {id: 3, pid: 1},
+    {id: 4, pid: 2},
+    {id: 5, pid: 3},
+    {id: 6, pid: 5}
+  ]
 
-    // 15. 三数之和
-    // var threeSum = function(nums) {
-    //     if (nums.length < 3) return [];
-    //     var soRes = nums.sort((a, b) => (a-b));
-    //     var res = [];
-    //     for (var i = 0; i < soRes.length - 2; i++){
-    //         var L = i + 1;
-    //         var R = soRes.length - 1;
-    //         if (soRes[i] === soRes[i - 1]) continue;
-    //         // if (soRes[i] + soRes[L] + soRes[R] === 0) res.push([soRes[i], soRes[L], soRes[R]]);
-    //         while (L < R) {
-    //             if (soRes[i] + soRes[L] + soRes[R] === 0) {
-    //                 res.push([soRes[i], soRes[L], soRes[R]]);
-    //                 let LB = L;
-    //                 while (soRes[L] === soRes[LB]) {
-    //                     L++;
-    //                 }
-    //             }
-    //             if (soRes[i] + soRes[L] + soRes[R] > 0) {
-    //                 let RB = R;
-    //                 while (soRes[R] === soRes[RB]) {
-    //                     R--
-    //                 }
-    //             }
-    //             if (soRes[i] + soRes[L] + soRes[R] < 0) {
-    //                 let LB = L;
-    //                 while (soRes[L] === soRes[LB]) {
-    //                     L++
-    //                 }
-    //             }
-    //
-    //         }
-    //     }
-    //
-    //     return res
-    // };
-    // // console.log(threeSum([-1,0,1,2,-1,-4]));
-    // console.log(threeSum([0,0,0,0]));
+  function getTree(arr) {
+    var arrs = []
+    var ajObj = {}
+    arr.some((item) => {
+      if (!item.pid) {
+        var itemIndex = arrs.push(item)
+        ajObj[item.id] = [itemIndex] - 1
+        return true
+      }
+    });
+    var res = arr.reduce((h, m, i, a) => {
+      if (m.pid) {
+        if (ajObj[m.pid]) {
+        } else {
+          ajObj[m.pid] = [];
+        }
+        foo(h, m, ajObj)
 
-    // 221。最大正方形
+      }
 
-    // 自己写的 超时了
-    // var maximalSquare = function(matrix) {
-    //     let res = 0;
-    //     matrix.forEach((it, index) => {
-    //         it.forEach((item, indexEm) => {
-    //             if (item === '1'){
-    //                 let num = 0;
-    //                 while (matrix[index + num] !== undefined && (matrix[index+num][indexEm + num] !== undefined)){
-    //                     if (matrix[index+num][indexEm + num] === '1') {
-    //                         const sq = getSquare(index, indexEm, num, matrix);
-    //                         const sqS = JSON.stringify(sq);
-    //                         console.log(sqS);
-    //                         if (sqS.indexOf(0) < 0){
-    //                             res = Math.pow(sq.length, 2) > res ? Math.pow(sq.length, 2) : res
-    //                         }
-    //                     }
-    //                     num ++
-    //                 }
-    //             }
-    //         })
-    //     })
-    //
-    //
-    //     return res;
-    //
-    //     function getSquare(col,row,len,matrix) {
-    //         const sq = [];
-    //         var ind = 0;
-    //         for (var i = col; i<=len+col;i++) {
-    //             sq[ind] = [];
-    //             for (var j = row; j<=len+row;j++) {
-    //                 sq[ind].push(matrix[i][j])
-    //             }
-    //             ind++
-    //         }
-    //         return sq
-    //     }
-    // };
+      function foo(arr, cur, addr) {
+        var flag = false;
+        arr.some((item, index, ar) => {
+          let theP = {};
 
-    // 动态规划
-    // var maximalSquare = function(matrix) {
-    //     var dp = [];
-    //     var res = 0;
-    //     for (var i = 0; i<matrix.length;i++) {
-    //         dp[i] = [];
-    //         for (var j = 0; j<matrix[i].length;j++) {
-    //             if (matrix[i][j] === '1') {
-    //                 if (i === 0 && j === 0) {
-    //                     dp[i][j] = 1
-    //                 }
-    //                 const s1 = dp[i - 1] && dp[i - 1][j - 1] || 0;
-    //                 const s2 = dp[i][j-1] || 0;
-    //                 const s3 = dp[i-1] && dp[i-1][j] || 0;
-    //                 dp[i][j] = Math.min(s1, s2, s3) + 1;
-    //                 res = dp[i][j] * dp[i][j] > res ? dp[i][j] * dp[i][j] : res
-    //             }
-    //         }
-    //     }
-    //     console.log(dp);
-    //     return res;
-    // };
-
-
-    // console.log(maximalSquare([
-    //     ["1", "0", "1", "0", "0"],
-    //     ["1", "0", "1", "1", "1"],
-    //     ["1", "1", "1", "1", "1"],
-    //     ["1", "0", "0", "1", "0"]]));
-
-
-    // 面试题 17。16 按摩师
-    var massage = function(nums) {
-        if (nums.length === 0) return 0;
-        if (nums.length === 1) return nums[0];
-        var dp = [];
-        nums.forEach((it,index) => {
-            if (index === 0 || index === 1) {
-                dp[index] = it
-            } else {
-                dp[index] = Math.max(dp[index - 2] || 0, dp[index - 3] || 0) + it
+          addr[cur.pid].forEach(it => {
+            theP = arrs[it]
+          });
+          if (theP && theP.id === cur.pid) {
+            if (!item.children) {
+              item.children = []
             }
+            item.children.push(cur);
+            return true
+          } else if (cur.pid === item.id) {
+            addr[cur.pid].push(index);
+            if (!item.children) {
+              item.children = []
+            }
+            item.children.push(cur);
+            flag = true;
+            return true
+          } else if (item.children) {
+            addr[cur.pid].push(index);
 
-        })
-        return Math.max(dp.pop(), dp.pop())
-    };
-    console.log(massage([2,1,4,5,3,1,1,3]));
+            flag = foo(item.children, cur, addr);
+            if (!flag) {
+              addr[cur.pid].pop()
+            }
+          }
+
+        });
+        return flag
+      }
+
+      return h
+    }, arrs)
+    console.log(ajObj)
+    return res
+  }
+
+  console.log(getTree(exampleTree))
+
+
+  // 830. 较大分组的位置
+
+  // var largeGroupPositions = function(s) {
+  //     var fu = '';
+  //     var res = [];
+  //     var resArr = []
+  //     var result = []
+  //     var max = 0
+  //     for (var i = 0; i < s.length; i++) {
+  //         if (fu !== s[i]) {
+  //             fu = s[i];
+  //             res[0] = i
+  //         } else {
+  //             res[1] = i
+  //             if (resArr[resArr.length - 1] && resArr[resArr.length - 1][0] === res[0]) {
+  //                 resArr.pop();
+  //             }
+  //             resArr.push([...res])
+  //         }
+  //     }
+  //     console.log(resArr);
+  //     resArr.forEach(it => {
+  //         if (it[1] - it[0] >= 2) {
+  //             result.push(it)
+  //         }
+  //     })
+  //     return result
+  // };
+  // var largeGroupPositions = function(s) {
+  //     var res = [];
+  //     var pot = 0;
+  //     var fu = '';
+  //     for (var i = 0; i < s.length; i++) {
+  //         if (fu !== s[i]) {
+  //             fu = s[i];
+  //             if ((i - 1 - pot) >= 2) {
+  //                 res.push([pot, i - 1])
+  //             }
+  //             pot = i
+  //         } else {
+  //             if (i === s.length - 1 && i - pot >= 2) {
+  //                 res.push([pot, i])
+  //             }
+  //         }
+  //     }
+  //     return res
+  // };
+  // console.log(largeGroupPositions("aba"));
+
+
+  //  1700. 无法吃午餐的学生数量
+  // var countStudents = function(students, sandwiches) {
+  //
+  //     var sl = students.length;
+  //     var res = -1;
+  //     while (sl !== res) {
+  //         if (res !== -1) {
+  //             sl = res
+  //         }
+  //         res = count()
+  //     }
+  //
+  //     return res;
+  //
+  //     function count() {
+  //         var len = students.length;
+  //         var num = 0;
+  //         while (num < len) {
+  //             num ++
+  //             if (students[0] === sandwiches[0]) {
+  //                 students.shift();
+  //                 sandwiches.shift();
+  //             } else {
+  //                 students.push(students.shift());
+  //             }
+  //         }
+  //         return students.length
+  //     }
+  //
+  //
+  // };
+  // console.log(countStudents([1,1,0,0], [0,1,0,1]));
+  // console.log(countStudents([1,1,1,0,0,1], [1,0,0,0,1,1]));
+
+
+  //  1450. 在既定时间做作业的学生人数
+  // var busyStudent = function(startTime, endTime, queryTime) {
+  //     var num = 0
+  //     for (var i = 0;i < startTime.length; i++) {
+  //         if (queryTime >= startTime[i] && queryTime <= endTime[i]){
+  //             num ++
+  //         }
+  //     }
+  //     return num
+  // };
+  // console.log(busyStudent([9, 8, 7, 6, 5, 4, 3, 2, 1], [10, 10, 10, 10, 10, 10, 10, 10, 10], 5));
+
+
+  // 463. 岛屿的周长
+  // var islandPerimeter = function(grid) {
+  //     var res = 0
+  //     grid.forEach((it, id) => {
+  //         it.forEach((item, index) => {
+  //             if (item === 1) {
+  //                 res += foo(id, index)
+  //             }
+  //         })
+  //     });
+  //
+  //     return res;
+  //
+  //     function foo(r, c) {
+  //         var num = 4;
+  //         if (grid[r] && grid[r][c-1] === 1) {
+  //             num--
+  //         }
+  //         if (grid[r] && grid[r][c+1] === 1) {
+  //             num--
+  //         }
+  //         if (grid[r - 1] && grid[r - 1][c] === 1) {
+  //             num--
+  //         }
+  //         if (grid[r + 1] && grid[r + 1][c] === 1) {
+  //             num--
+  //         }
+  //         return num
+  //     }
+  // };
+  // console.log(islandPerimeter([[1]]));
+
+  // 189. 旋转数组
+  // var rotate = function(nums, k) {
+  //     var start = 0;
+  //     while (start < k) {
+  //         start++
+  //         nums.unshift(nums.pop());
+  //     }
+  //     return nums
+  // };
+  // console.log(rotate([1,2,3,4,5,6,7], 2));
+
+
+  // 210. 课程表 II  没做出来 是一道图的问题
+  // var findOrder = function(numCourses, prerequisites) {
+  //     if (prerequisites.length === 0) {
+  //         var arr = new Array(numCourses).fill();
+  //         return (arr.map((it, d) => d)).reverse();
+  //     }
+  //     var res = [];
+  //     var tar = null;
+  //     for (const x of prerequisites) {
+  //         if (res.length === 0) {
+  //             res = res.concat([x[1], x[0]])
+  //         } else if (res.length === numCourses) {
+  //             return res
+  //         } else if (x[1] === res[res.length - 1]) {
+  //
+  //             res.push(x[0])
+  //         }
+  //         if (tar === x[0]) {
+  //             var ind = res.indexOf(x[0]);
+  //             res.splice(ind, 0, x[1])
+  //         }
+  //         tar = x[0]
+  //     }
+  //     return res
+  //
+  // };
+  // console.log(findOrder(3, []));
+
+
+  // 200. 岛屿数量
+  // var numIslands = function(grid) {
+  //     var num = 0;
+  //     grid.forEach((it, r) => {
+  //         it.forEach((item, c) => {
+  //             if (item === '1') {
+  //                 foo(r, c)
+  //                 num++
+  //                 // console.log(foo(r, c), r, c);
+  //             }
+  //         })
+  //     })
+  //
+  //     function foo(r, c) {
+  //         if (grid[r] && grid[r][c - 1] === '1') {
+  //             grid[r][c - 1] = 1;
+  //             foo(r, c - 1);
+  //         }
+  //         if (grid[r] && grid[r][c + 1] === '1') {
+  //             grid[r][c + 1] = 1;
+  //             foo(r, c + 1);
+  //         }
+  //         if (grid[r - 1] && grid[r - 1][c] === '1') {
+  //             grid[r - 1][c] = 1;
+  //             foo(r - 1, c);
+  //         }
+  //         if (grid[r + 1] && grid[r + 1][c] === '1') {
+  //             grid[r + 1][c] = 1;
+  //             foo(r + 1, c);
+  //         }
+  //
+  //
+  //     }
+  //
+  //     return num
+  // };
+  // // console.log(numIslands([
+  // //     ["1","1","0","0","0"],
+  // //     ["1","1","0","0","0"],
+  // //     ["0","0","1","0","0"],
+  // //     ["0","0","0","1","1"]
+  // // ]));
+  // console.log(numIslands([
+  //     ["1","1","1","1","0"],
+  //     ["1","1","0","1","0"],
+  //     ["1","1","0","0","0"],
+  //     ["0","0","0","0","0"]
+  // ]));
+
+
+  // 1584. 连接所有点的最小费用
+  // var minCostConnectPoints = function(points) {
+  //     // let num = 0;
+  //     // points.forEach(it => {
+  //     //     if (!it[3]) {
+  //     //         if (num === 0) {
+  //     //             it[3] = 1;
+  //     //         }
+  //     //         points.forEach(item => {
+  //     //             if (!item[3]) {
+  //     //
+  //     //             }
+  //     //         })
+  //     //     }
+  //     // })
+  //
+  //     let num = 0;
+  //     points.sort(function(a,b){return a[0]+a[1] -b[0]-b[1]});
+  //     console.log(points);
+  //     points.forEach( (it, idx)=> {
+  //         if (idx !== 0) {
+  //             num += Math.abs(it[0] - points[idx - 1][0]) + Math.abs(it[1] - points[idx - 1][1]);
+  //         }
+  //     });
+  //     return num;
+  // };
+  // console.log(minCostConnectPoints([[0,0],[2,2],[3,10],[5,2],[7,0]]));
+
+  // 15. 三数之和
+  // var threeSum = function(nums) {
+  //     if (nums.length < 3) return [];
+  //     var soRes = nums.sort((a, b) => (a-b));
+  //     var res = [];
+  //     for (var i = 0; i < soRes.length - 2; i++){
+  //         var L = i + 1;
+  //         var R = soRes.length - 1;
+  //         if (soRes[i] === soRes[i - 1]) continue;
+  //         // if (soRes[i] + soRes[L] + soRes[R] === 0) res.push([soRes[i], soRes[L], soRes[R]]);
+  //         while (L < R) {
+  //             if (soRes[i] + soRes[L] + soRes[R] === 0) {
+  //                 res.push([soRes[i], soRes[L], soRes[R]]);
+  //                 let LB = L;
+  //                 while (soRes[L] === soRes[LB]) {
+  //                     L++;
+  //                 }
+  //             }
+  //             if (soRes[i] + soRes[L] + soRes[R] > 0) {
+  //                 let RB = R;
+  //                 while (soRes[R] === soRes[RB]) {
+  //                     R--
+  //                 }
+  //             }
+  //             if (soRes[i] + soRes[L] + soRes[R] < 0) {
+  //                 let LB = L;
+  //                 while (soRes[L] === soRes[LB]) {
+  //                     L++
+  //                 }
+  //             }
+  //
+  //         }
+  //     }
+  //
+  //     return res
+  // };
+  // // console.log(threeSum([-1,0,1,2,-1,-4]));
+  // console.log(threeSum([0,0,0,0]));
+
+  // 221。最大正方形
+
+  // 自己写的 超时了
+  // var maximalSquare = function(matrix) {
+  //     let res = 0;
+  //     matrix.forEach((it, index) => {
+  //         it.forEach((item, indexEm) => {
+  //             if (item === '1'){
+  //                 let num = 0;
+  //                 while (matrix[index + num] !== undefined && (matrix[index+num][indexEm + num] !== undefined)){
+  //                     if (matrix[index+num][indexEm + num] === '1') {
+  //                         const sq = getSquare(index, indexEm, num, matrix);
+  //                         const sqS = JSON.stringify(sq);
+  //                         console.log(sqS);
+  //                         if (sqS.indexOf(0) < 0){
+  //                             res = Math.pow(sq.length, 2) > res ? Math.pow(sq.length, 2) : res
+  //                         }
+  //                     }
+  //                     num ++
+  //                 }
+  //             }
+  //         })
+  //     })
+  //
+  //
+  //     return res;
+  //
+  //     function getSquare(col,row,len,matrix) {
+  //         const sq = [];
+  //         var ind = 0;
+  //         for (var i = col; i<=len+col;i++) {
+  //             sq[ind] = [];
+  //             for (var j = row; j<=len+row;j++) {
+  //                 sq[ind].push(matrix[i][j])
+  //             }
+  //             ind++
+  //         }
+  //         return sq
+  //     }
+  // };
+
+  // 动态规划
+  // var maximalSquare = function(matrix) {
+  //     var dp = [];
+  //     var res = 0;
+  //     for (var i = 0; i<matrix.length;i++) {
+  //         dp[i] = [];
+  //         for (var j = 0; j<matrix[i].length;j++) {
+  //             if (matrix[i][j] === '1') {
+  //                 if (i === 0 && j === 0) {
+  //                     dp[i][j] = 1
+  //                 }
+  //                 const s1 = dp[i - 1] && dp[i - 1][j - 1] || 0;
+  //                 const s2 = dp[i][j-1] || 0;
+  //                 const s3 = dp[i-1] && dp[i-1][j] || 0;
+  //                 dp[i][j] = Math.min(s1, s2, s3) + 1;
+  //                 res = dp[i][j] * dp[i][j] > res ? dp[i][j] * dp[i][j] : res
+  //             }
+  //         }
+  //     }
+  //     console.log(dp);
+  //     return res;
+  // };
+
+
+  // console.log(maximalSquare([
+  //     ["1", "0", "1", "0", "0"],
+  //     ["1", "0", "1", "1", "1"],
+  //     ["1", "1", "1", "1", "1"],
+  //     ["1", "0", "0", "1", "0"]]));
+
+
+  // 面试题 17。16 按摩师
+  var massage = function (nums) {
+    if (nums.length === 0) return 0;
+    if (nums.length === 1) return nums[0];
+    var dp = [];
+    nums.forEach((it, index) => {
+      if (index === 0 || index === 1) {
+        dp[index] = it
+      } else {
+        dp[index] = Math.max(dp[index - 2] || 0, dp[index - 3] || 0) + it
+      }
+
+    })
+    return Math.max(dp.pop(), dp.pop())
+  };
+  console.log(massage([2, 1, 4, 5, 3, 1, 1, 3]));
+
+
 </script>
 </body>
 </html>
