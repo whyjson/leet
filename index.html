@@ -6,7 +6,10 @@
 </head>
 <body>
 <script>
-  // 198 打家劫舍
+  /**
+   * 198 打家劫舍
+   */
+  //
   // var rob = function(nums) {
   //     if (nums.length <=1) {
   //         return nums[0] || 0
@@ -25,7 +28,10 @@
   // };
   // console.log(rob([2,7,9,3,1]))
 
-  // 153
+  /**
+   *153
+   */
+  //
   // var findMin = function(nums) {
   //     var left = 0
   //     var right = nums.length
@@ -52,8 +58,10 @@
   // console.log(findMin([7, 2, 3, 4]))
   // console.log(findMin([2, 3, 4]))
 
-
-  // 两数想加
+  /**
+   * 两数想加
+   */
+  //
   // var nums = [2, 7, 11, 15], target = 9
   // var twoSum = function(nums, target) {
   //     var arr = []
@@ -70,8 +78,10 @@
   //     return arr
   // };
   // console.log(twoSum(nums, target))
-
-  // 链表相加
+  /**
+   * 链表相加
+   */
+  //
   // var all = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]
   // var al = {}
   // all.reduce((h, m, i, a) => {
@@ -111,7 +121,9 @@
   //   }, sR)
   //   return sR
   // }; // 大数相加会有问题
-
+  /**
+   *
+   */
   // var addTwoNumbers = function(l1, l2) {
   //   var n = 0
   //   var l = {}
@@ -146,7 +158,9 @@
   // };
   // console.log(addTwoNumbers(l1, l2))
 
-
+  /**
+   *
+   */
   // var lengthOfLongestSubstring = function(s) {
   //   var len = 0
   //   var si = 0
@@ -163,7 +177,9 @@
   //
   // console.log(lengthOfLongestSubstring("aaa"));
 
-
+  /**
+   *
+   */
   // var maxArea = function(height) {
   //   var s = 0
   //   for (var i = 0; i < height.length; i++) {
@@ -175,7 +191,9 @@
   // };
   // console.log(maxArea([1,8,6,2,5,4,8,3,7]))
 
-
+  /**
+   *
+   */
   // var findMedianSortedArrays = function(nums1, nums2) {
   //   var len = nums1.length + nums2.length
   //   var len1 = nums1.length - 1
@@ -202,7 +220,9 @@
   // };
   // console.log(findMedianSortedArrays([1, 3], [1, 3, 5]))
 
-
+  /**
+   *
+   */
   // var uniqueOccurrences = function(arr) {
   //   var len = arr.length - 1
   //   var obj = {}
@@ -224,7 +244,9 @@
   // };
   // uniqueOccurrences([1,2,2,1,1,3])
 
-
+  /**
+   *
+   */
   // var arr = ["dog","racecar","car"]
   // var longestCommonPrefix = function(strs) {
   //   var comStr = ''
@@ -241,7 +263,9 @@
   // };
   // console.log(longestCommonPrefix(arr))
 
-
+  /**
+   *
+   */
   // var letterCombinations = function(digits) {
   //   var obj ={
   //     2: 'abc',
@@ -270,7 +294,9 @@
   //
   // };
   // console.log(letterCombinations('23'))
-
+  /**
+   *
+   */
   // 自己的
   // var minReorder = function(n, connections) {
   //   var numMy = 0
@@ -367,7 +393,9 @@
   // };
   // console.log(minReorder(8,[[0,1],[2,0],[3,0],[4,1],[0,5],[1,6],[0,7]]))
 
-
+  /**
+   *
+   */
   // var trap = function(height) {
   //   var res = []
   //   var resE = []
@@ -577,8 +605,10 @@
   // console.log(trap([3,0,5,3,3,6,5,0,3,6]))
   // console.log(trap([0,1,0,2,1,0,1,3,2,1,2,1]))
 
-
-  // 数组全排列
+  /**
+   * 数组全排列
+   */
+  //
   // function Permutation(arr) {
   //   this.len = 0;    // 存储全排列次数
   //   this.arr = arr.concat();   // 传入的数组
@@ -620,7 +650,9 @@
   // per.start();
   // console.log(per.result);
 
-
+  /**
+   *
+   */
   // var spiralMatrixIII = function(R, C, r0, c0) {
   //   // R 纵 C 横
   //   var sR = r0
@@ -686,8 +718,10 @@
   //
   // console.log(sort([1, 2, 3, 4, 5, 6]))
   // console.log(findMin([2, 3, 4]))
-
-  // 73 矩阵置零
+  /**
+   * 73 矩阵置零
+   */
+  //
   // var setZeroes = function(matrix) {
   //     var res = []
   //     matrix.forEach((itY, inY) => {
@@ -715,7 +749,10 @@
   //     [1, 1, 1]
   // ]))
 
-  // 1529. 灯泡开关
+  /**
+   * 1529. 灯泡开关
+   */
+  //
   // var minFlips = function(target) {
   //     var initStatus = '0'
   //     var changeNum = 0
@@ -729,82 +766,196 @@
   // };
   // console.log(minFlips('001011101'))
 
-
-  // 获取节点路径
+  /**
+   * 获取节点路径
+   */
+  //
   // const exampleTree = [
   //   {id: 1},
-  //   {id: 2, pid: 1},
-  //   {id: 3, pid: 1},
-  //   {id: 4, pid: 2},
-  //   {id: 5, pid: 3},
-  //   {id: 6, pid: 5}
-  // ]
-  //
-  // function getTree(arr) {
-  //   var arrs = []
-  //   var ajObj = {}
-  //   arr.some((item) => {
-  //     if (!item.pid) {
-  //       var itemIndex = arrs.push(item)
-  //       ajObj[item.id] = [itemIndex] - 1
-  //       return true
+  //   {id: 2, pId: 1},
+  //   {id: 3, pId: 1},
+  //   {id: 4, pId: 2},
+  //   {id: 5, pId: 3},
+  //   {id: 15, pId: 3},
+  //   {id: 17, pId: 3},
+  //   {id: 179, pId: 3},
+  //   {id: 19, pId: 3},
+  //   {id: 6, pId: 5},
+  //   {id: 7, pId: 5},
+  //   {id: 8, pId: 5},
+  //   {id: 9, pId: 5},
+  //   {id: 10, pId: 5},
+  //   {id: 11, pId: 5},
+  //   // {id: 12, pId: 5},
+  // ];
+
+  function getTree(data) {
+    var nummm = 0;
+    var arr = data.sort(((a, b) => a.id - b.id));
+    var arrs = [];
+    var ajObj = {};
+    arr.some((item) => {
+      // nummm ++;
+      if (!item.pId) {
+        var itemIndex = arrs.push(item);
+        ajObj[item.id] = [];
+      } else {
+        ajObj[item.id] = [];
+      }
+    });
+    var res = arr.reduce((h, m, i, a) => {
+      nummm++;
+      if (m.pId) {
+        let theP = {};
+        let dataList = h;
+        ajObj[m.pId].forEach(it => {
+          // nummm ++;
+          theP = dataList[it];
+          dataList = dataList[it] && dataList[it].children || [];
+        });
+        if (theP && theP.id === m.pId) {
+          if (!theP.children) {
+            theP.children = []
+          }
+          theP.children.push(m);
+          return h
+        }
+        foo(h, m, ajObj)
+
+      }
+
+      function foo(pa, cur, addr) {
+        var flag = false;
+        pa.some((item, index, ar) => {
+          // nummm ++;
+          if (cur.pId === item.id) {
+            addr[cur.pId].push(index);
+            if (!item.children) {
+              item.children = []
+            }
+            item.children.push(cur);
+            flag = true;
+            return true
+          } else if (item.children) {
+            // console.log(item.children);
+            addr[cur.pId].push(index);
+
+            flag = foo(item.children, cur, addr);
+            if (!flag) {
+              addr[cur.pId].pop()
+            } else {
+              return true
+            }
+          }
+
+        });
+        return flag
+      }
+
+      return h
+    }, arrs);
+    console.log(nummm);
+    return res
+  }
+  var oo = [{"id":512,"name":"地址三级联动","pId":352},{"id":768,"name":"系统参数设置","pId":380},{"id":1024,"name":"获取问答","pId":1003},{"id":513,"name":"已预约车位列表","pId":352},{"id":769,"name":"查询指定运营商参数","pId":767},{"id":514,"name":"获取商圈列表","pId":353},{"id":770,"name":"保存","pId":767},{"id":515,"name":"增加商圈","pId":353},{"id":771,"name":"系统参数列表（分页）","pId":768},{"id":516,"name":"修改商圈","pId":353},{"id":772,"name":"查询系统参数详情","pId":768},{"id":517,"name":"查看商圈详情","pId":353},{"id":773,"name":"编辑","pId":768},{"id":518,"name":"删除","pId":353},{"id":774,"name":"车辆异常报警","pId":355},{"id":519,"name":"其它赔付列表","pId":386},{"id":775,"name":"列表","pId":774},{"id":1031,"name":"添加问答","pId":1003},{"id":520,"name":"查看赔付详情","pId":386},{"id":776,"name":"外部车辆违章查询","pId":355},{"id":521,"name":"删除其它赔付","pId":386},{"id":777,"name":"外部违章车辆数据","pId":776},{"id":522,"name":"修改其它赔付","pId":386},{"id":778,"name":"外部违章导入导出","pId":776},{"id":523,"name":"保存其他赔付","pId":386},{"id":779,"name":"外部违章详情","pId":776},{"id":524,"name":"代扣事故","pId":385},{"id":780,"name":"获取任务最高分","pId":681},{"id":525,"name":"代扣其他赔付","pId":386},{"id":781,"name":"所有修改","pId":678},{"id":526,"name":"优惠券列表","pId":370},{"id":782,"name":"拍照还车","pId":350},{"id":1038,"name":"修改问答","pId":1003},{"id":527,"name":"会员优惠券","pId":370},{"id":783,"name":"查询车辆是否有追缴任务","pId":350},{"id":528,"name":"优惠卷列表页-状态","pId":370},{"id":784,"name":"获取运维任务管理列表","pId":358},{"id":529,"name":"添加优惠券","pId":370},{"id":785,"name":"企业状态修改","pId":406},{"id":530,"name":"删除优惠券","pId":370},{"id":786,"name":"删除","pId":748},{"id":531,"name":"优惠券修改","pId":370},{"id":787,"name":"获取用户应收、实付总金额","pId":344},{"id":532,"name":"优惠券详情","pId":370},{"id":788,"name":"当前车辆信息列表","pId":352},{"id":533,"name":"已发放优惠卷列表","pId":373},{"id":789,"name":"订单支付查询","pId":376},{"id":1045,"name":"获取电子围栏列表","pId":980},{"id":534,"name":"已发放优惠卷列表-企业","pId":373},{"id":790,"name":"查询","pId":789},{"id":535,"name":"已发放优惠卷列表-作废","pId":373},{"id":791,"name":"充值余额查询","pId":376},{"id":536,"name":"礼包配置列表","pId":371},{"id":792,"name":"订单支付查询、充值记录查询","pId":791},{"id":537,"name":"礼包配置-删除","pId":371},{"id":793,"name":"邀请管理","pId":343},{"id":538,"name":"礼包配置-添加","pId":371},{"id":794,"name":"邀请列表","pId":793},{"id":539,"name":"礼包配置-修改","pId":371},{"id":795,"name":"获取运维团队列表","pId":350},{"id":540,"name":"礼包配置列表-详情","pId":371},{"id":796,"name":"获取运维团队人员列表","pId":350},{"id":1052,"name":"添加电子围栏","pId":980},{"id":541,"name":"修理厂编辑","pId":387},{"id":797,"name":"新增任务","pId":350},{"id":542,"name":"修理厂停用","pId":387},{"id":798},{"id":543,"name":"自动/活动发放规则列表","pId":372},{"id":799,"name":"犯罪记录日志","pId":798},{"id":544,"name":"添加修理厂","pId":387},{"id":800,"name":"犯罪记录查询","pId":798},{"id":545,"name":"查看列表","pId":360},{"id":801,"name":"犯罪记录查询按钮","pId":799},{"id":546,"name":"添加团队","pId":360},{"id":802,"name":"犯罪记录日志列表","pId":800},{"id":547,"name":"获取团队信息","pId":360},{"id":1059,"name":"修改/删除电子围栏","pId":980},{"id":548,"name":"获取当前运营商人员","pId":360},{"id":549,"name":"启用*停用","pId":372},{"id":550,"name":"修改团队信息","pId":360},{"id":551,"name":"活动规则-添加","pId":372},{"id":807,"name":"转异常","pId":377},{"id":552,"name":"团队可以选择网点","pId":360},{"id":808,"name":"排序","pId":396},{"id":553,"name":"活动规则-添加-人数","pId":372},{"id":809,"name":"运维任务增加备注","pId":681},{"id":554,"name":"活动规则-详情","pId":372},{"id":810,"name":"运维任务备注查看","pId":681},{"id":1066,"name":"车辆维修事故统计","pId":355},{"id":555,"name":"人工发送列表","pId":372},{"id":811,"name":"运维车辆轨迹","pId":682},{"id":556,"name":"人工发送-批量导入会员数据","pId":372},{"id":812,"name":"事故支付查询","pId":376},{"id":557,"name":"人工发放优惠卷","pId":372},{"id":813,"name":"其它赔付支付查询","pId":376},{"id":558,"name":"查看列表","pId":363},{"id":814,"name":"退余额管理","pId":376},{"id":559,"name":"客户操作日志","pId":392},{"id":815,"name":"退款记录查询","pId":376},{"id":560,"name":"蓝牙日志列表","pId":404},{"id":816,"name":"事故支付列表","pId":812},{"id":561,"name":"查看运维小组","pId":363},{"id":817,"name":"其它赔付列表","pId":813},{"id":1073,"name":"车辆维修事故统计列表","pId":1066},{"id":562,"name":"蓝牙日志详情","pId":404},{"id":818,"name":"退余额列表","pId":814},{"id":563,"name":"查看列表","pId":364},{"id":819,"name":"获取附近网点新","pId":350},{"id":564,"name":"查看详情","pId":364},{"id":820,"name":"完成退款","pId":814},{"id":565,"name":"系统日志列表","pId":391},{"id":821,"name":"车牌号搜索","pId":350},{"id":566,"name":"兑换码管理-主分页列表","pId":374},{"id":822,"name":"修改退款账户","pId":814},{"id":567,"name":"获取兑换券分类相关信息","pId":374},{"id":823,"name":"停用或者启用网点信息","pId":352},{"id":568,"name":"首页获取所有车辆","pId":393},{"id":824,"name":"退款记录列表","pId":815},{"id":1080,"name":"类别列表和指标列表","pId":1066},{"id":569,"name":"保存或更新兑换券分类","pId":374},{"id":825,"name":"保存发票信息","pId":378},{"id":570,"name":"停用","pId":374},{"id":826,"name":"导入退款列表","pId":815},{"id":571,"name":"首页获取所有网点","pId":393},{"id":827,"name":"获取会员列表","pId":378},{"id":572,"name":"兑换码管理-删除","pId":374},{"id":828,"name":"查询企业抬头和税号","pId":378},{"id":573,"name":"生成兑换码","pId":374},{"id":829,"name":"退余额按钮","pId":344},{"id":574,"name":"兑换码管理-追加","pId":374},{"id":830,"name":"地址三级联动","pId":378},{"id":575,"name":"重置密码","pId":381},{"id":831,"name":"民族下拉列表","pId":344},{"id":1087,"name":"导入Excel文件地址","pId":1066},{"id":576,"name":"兑换码分页列表","pId":374},{"id":832,"name":"用户上传资料","pId":344},{"id":577,"name":"兑换码管理-下载","pId":374},{"id":833,"name":"订单查询","pId":346},{"id":578,"name":"兑换码查询","pId":397},{"id":834,"name":"其他赔付导入","pId":386},{"id":579,"name":"活动公告-主分页列表","pId":396},{"id":835,"name":"企业总额查询","pId":407},{"id":580,"name":"查看列表","pId":365},{"id":836,"name":"根据运营商查城市","pId":378},{"id":581,"name":"查看运维任务类型","pId":365},{"id":837,"name":"重置超级管理员密码","pId":406},{"id":582,"name":"活动公告-添加","pId":396},{"id":838,"name":"还车网点位置","pId":681},{"id":1094,"name":"添加v2","pId":864},{"id":583,"name":"活动公告-查询","pId":396},{"id":839,"name":"会员批量公安审核","pId":343},{"id":584,"name":"活动公告-编辑","pId":396},{"id":840,"name":"会员批量公安审核列表","pId":839},{"id":585,"name":"活动公告-停用","pId":396},{"id":841,"name":"导入","pId":839},{"id":586,"name":"短信列表","pId":375},{"id":842,"name":"重新提交","pId":839},{"id":587,"name":"查看列表","pId":377},{"id":843,"name":"短/日租订单管理","pId":346},{"id":588,"name":"查看详情","pId":377},{"id":844,"name":"短租订单列表","pId":843},{"id":589,"name":"导出","pId":377},{"id":845,"name":"短租订单详情","pId":843},{"id":1101,"name":"查看v2","pId":864},{"id":590,"name":"保存用户信息","pId":381},{"id":846,"name":"短租订单车辆轨迹","pId":843},{"id":591,"name":"获取用户信息","pId":381},{"id":847,"name":"订单计费详情","pId":843},{"id":592,"name":"启用禁用用户","pId":381},{"id":848,"name":"获取最近网点","pId":843},{"id":593,"name":"获取用户列表","pId":381},{"id":849,"name":"添加退款申请","pId":843},{"id":594,"name":"导入","pId":377},{"id":850,"name":"短租订单拍照列表","pId":843},{"id":595,"name":"拉取用户编辑信息的枚举值","pId":381},{"id":851,"name":"短租后台操作汽车","pId":843},{"id":596,"name":"修改","pId":377},{"id":852,"name":"短租拍照还车","pId":843},{"id":1108,"name":"修改短租套餐","pId":864},{"id":597,"name":"新增平台用户","pId":381},{"id":853,"name":"短租取消订单校验","pId":843},{"id":598,"name":"获取列表","pId":398},{"id":854,"name":"短租取消订单","pId":843},{"id":343,"name":"会员管理"},{"id":599,"name":"修改平台用户","pId":381},{"id":855,"name":"短租强制还车","pId":843},{"id":344,"name":"个人会员","pId":343},{"id":600,"name":"查看","pId":398},{"id":856,"name":"短租运维任务列表","pId":843},{"id":345,"name":"计费管理"},{"id":601,"name":" 获取角色列表带分页","pId":381},{"id":857,"name":"运维记录","pId":843},{"id":346,"name":"订单管理"},{"id":602,"name":"获取角色用户","pId":381},{"id":858,"name":"获取网点属性","pId":352},{"id":347,"name":"网点管理"},{"id":603,"name":"修改账户","pId":398},{"id":859,"name":"添加网点","pId":352},{"id":1115,"name":"短租套餐排序","pId":864},{"id":348,"name":"计费管理","pId":345},{"id":604,"name":"受理","pId":398},{"id":860,"name":"编辑网点","pId":352},{"id":349,"name":"车辆计费管理","pId":345},{"id":605,"name":"退款完成","pId":398},{"id":861,"name":"已预约车位分时、整日租 V2","pId":352},{"id":350,"name":"订单管理","pId":346},{"id":606,"name":"获取列表","pId":378},{"id":862,"name":"订单退款管理","pId":376},{"id":351,"name":"异常订单查询","pId":346},{"id":607,"name":"查看","pId":378},{"id":863,"name":"退支付单","pId":862},{"id":352,"name":"网点管理","pId":347},{"id":608,"name":"受理","pId":378},{"id":864,"name":"短租计费规则管理","pId":345},{"id":353,"name":"商圈管理","pId":347},{"id":609,"name":"冲红","pId":378},{"id":865,"name":"取消退款","pId":862},{"id":610,"name":"开电票","pId":378},{"id":866,"name":"获取车型","pId":864},{"id":1122,"name":"添加短租套餐","pId":864},{"id":355,"name":"车辆管理"},{"id":611,"name":"转纸票","pId":378},{"id":867,"name":"查询","pId":864},{"id":356,"name":"车型管理","pId":355},{"id":612,"name":"驳回","pId":378},{"id":868,"name":"送车记录管理（新）","pId":677},{"id":357,"name":"车辆信息管理","pId":355},{"id":613,"name":"列表查看","pId":388},{"id":869,"name":"送车任务管理列表","pId":868},{"id":358,"name":"违章管理","pId":355},{"id":614,"name":"查看规则","pId":389},{"id":870,"name":"转派/分配送车任务","pId":868},{"id":359,"name":"运维管理"},{"id":615,"name":"修改参数配置","pId":389},{"id":871,"name":"检查是否有重复","pId":864},{"id":360,"name":"运维团队管理","pId":359},{"id":616,"name":"查询列表","pId":403},{"id":872,"name":"添加","pId":864},{"id":361,"name":"运维员工管理","pId":359},{"id":617,"name":"企业-列表","pId":406},{"id":873,"name":"查看单个数据","pId":864},{"id":1129,"name":"检查退押金","pId":344},{"id":362,"name":"运维任务管理","pId":359},{"id":618,"name":"角色编辑","pId":383},{"id":874,"name":"送车任务详情","pId":868},{"id":363,"name":"运维记录管理","pId":359},{"id":619,"name":"根据企业名获取企业信息","pId":406},{"id":875,"name":"获取订单类型","pId":868},{"id":364,"name":"积分管理","pId":359},{"id":620,"name":"查看列表","pId":383},{"id":876,"name":"删除","pId":864},{"id":365,"name":"积分规则管理","pId":359},{"id":621,"name":"查询所有企业","pId":406},{"id":877,"name":"添加送车任务","pId":868},{"id":366,"name":"营销管理"},{"id":622,"name":"企业-详情","pId":406},{"id":878,"name":"送车任务详情","pId":868},{"id":367,"name":"优惠券","pId":366},{"id":623,"name":"企业-编辑","pId":406},{"id":368,"name":"兑换码管理","pId":366},{"id":624,"name":"企业-增加","pId":406},{"id":1136,"name":"长时未动查询","pId":355},{"id":369,"name":"消息中心","pId":366},{"id":625,"name":"添加菜单","pId":382},{"id":370,"name":"优惠券管理","pId":367},{"id":626,"name":"企业余额充值分页","pId":408},{"id":882,"name":"车机信息管理","pId":346},{"id":371,"name":"礼包管理","pId":367},{"id":627,"name":"获取菜单列表","pId":382},{"id":372,"name":"优惠券发放管理","pId":367},{"id":628,"name":"企业余额-充值","pId":406},{"id":373,"name":"已发放优惠券","pId":367},{"id":629,"name":"获取菜单详情","pId":382},{"id":374,"name":"兑换码管理","pId":368},{"id":630,"name":"修改临时金额","pId":406},{"id":375,"name":"已发送短信列表","pId":369},{"id":631,"name":"企业订单列表","pId":407},{"id":1143,"name":"长时未动车辆","pId":1136},{"id":376,"name":"财务管理"},{"id":632,"name":"企业-增加管理员","pId":406},{"id":377,"name":"退押金管理","pId":376},{"id":633,"name":"检查组织机构是已经否存在","pId":406},{"id":889,"name":"获取车辆在一段时间内的车机信息","pId":882},{"id":378,"name":"发票管理","pId":376},{"id":634,"name":"查看角色权限","pId":383},{"id":379,"name":"支付管理","pId":376},{"id":635,"name":"获取菜单权限","pId":383},{"id":380,"name":"系统设置"},{"id":636,"name":"角色分配功能权限","pId":383},{"id":381,"name":"用户管理","pId":380},{"id":637,"name":"新增角色","pId":383},{"id":382,"name":"功能管理","pId":380},{"id":638,"name":"添加积分任务类型","pId":365},{"id":1150,"name":"押金/余额监管记录","pId":376},{"id":383,"name":"角色管理","pId":380},{"id":639,"name":"获取积分规则任务类型","pId":365},{"id":384,"name":"企业管理","pId":343},{"id":640,"name":"添加任务积分规则","pId":365},{"id":896,"name":"车牌号搜索","pId":882},{"id":385,"name":"事故管理","pId":355},{"id":641,"name":"修改任务积分规则","pId":365},{"id":386,"name":"其他管理","pId":355},{"id":642,"name":"积分规则停用","pId":365},{"id":387,"name":"修理厂管理","pId":359},{"id":643,"name":"添加运维任务状态列表","pId":362},{"id":899,"name":"获取用户应收、实付总金额短租","pId":344},{"id":388,"name":"运维日志管理","pId":359},{"id":644,"name":"车牌验重","pId":357},{"id":389,"name":"任务参数配置","pId":359},{"id":645,"name":"车机验重","pId":357},{"id":1157,"name":"新增网点3","pId":352},{"id":390,"name":"日志管理"},{"id":646,"name":"编辑","pId":382},{"id":902,"name":"查看列表","pId":862},{"id":391,"name":"系统操作日志","pId":390},{"id":647,"name":"车型重复校验","pId":356},{"id":903,"name":"12123","pId":346},{"id":392,"name":"客户操作日志","pId":390},{"id":648,"name":"角色运营商","pId":361},{"id":393,"name":"首页"},{"id":649,"name":"获取网点","pId":361},{"id":394,"name":"用户意见反馈查询","pId":343},{"id":650,"name":" 获取会员枚举值","pId":375},{"id":395,"name":"有车提醒","pId":346},{"id":651,"name":"上传图片","pId":352},{"id":396,"name":"活动公告管理","pId":366},{"id":652,"name":"获取所有车型","pId":357},{"id":1164,"name":"修改网点3","pId":352},{"id":397,"name":"兑换码查询","pId":368},{"id":653,"name":"受理驳回","pId":358},{"id":398,"name":"退押金异常处理","pId":376},{"id":654,"name":"车辆操作","pId":357},{"id":910,"name":"违章列表","pId":903},{"id":655,"name":"查看运维任务类型","pId":362},{"id":656,"name":"列表网点查询条件","pId":350},{"id":657,"name":"查看详情","pId":373},{"id":658,"name":"内部到出(后台调用)","pId":377},{"id":403,"name":"充值押金记录查询","pId":376},{"id":659,"name":"角色运营商","pId":388},{"id":404,"name":"蓝牙操作日志","pId":390},{"id":660,"name":"获取维修厂列表","pId":362},{"id":405,"name":"企业管理"},{"id":661,"name":"获取全部网点列表","pId":357},{"id":917,"name":"车牌头列表","pId":903},{"id":406,"name":"企业管理","pId":405},{"id":662,"name":"图片上传","pId":396},{"id":407,"name":"企业订单查询","pId":405},{"id":663,"name":"芝麻反馈","pId":344},{"id":408,"name":"充值记录查询","pId":405},{"id":664,"name":"重新核验","pId":344},{"id":409,"name":"停用","pId":344},{"id":665,"name":"会员注销","pId":344},{"id":410,"name":"修改企业","pId":344},{"id":411,"name":"查询","pId":344},{"id":412,"name":"查看详情","pId":344},{"id":924,"name":"上传","pId":903},{"id":413,"name":"查看个人订单","pId":344},{"id":414,"name":"查看余额","pId":344},{"id":415,"name":"查看个人优惠券","pId":344},{"id":416,"name":"查看个人发票","pId":344},{"id":417,"name":"查看个人意见反馈","pId":344},{"id":418,"name":"查看个人押金","pId":344},{"id":419,"name":"查看企业列表","pId":344},{"id":931,"name":"更新","pId":903},{"id":420,"name":"修改手机号","pId":344},{"id":421,"name":"修改会员信息","pId":344},{"id":677,"name":"运维管理（新）"},{"id":422,"name":"会员审核","pId":344},{"id":678,"name":"运维团队管理(新)","pId":677},{"id":423,"name":"会员审核驳回","pId":344},{"id":679,"name":"运维员工管理(新)","pId":677},{"id":424,"name":"查看列表","pId":394},{"id":680,"name":"修理厂管理(新)","pId":677},{"id":425,"name":"查看列表","pId":348},{"id":681,"name":"运维任务管理(新)","pId":677},{"id":426,"name":"查看列表","pId":362},{"id":682,"name":"运维记录管理(新)","pId":677},{"id":938,"name":"作废","pId":903},{"id":427,"name":"查看任务详情","pId":362},{"id":683,"name":"积分管理(新)","pId":677},{"id":428,"name":"分配任务","pId":362},{"id":684,"name":"积分规则管理(新)","pId":677},{"id":429,"name":"取消任务","pId":362},{"id":685,"name":"运维日志管理(新)","pId":677},{"id":430,"name":"转派任务","pId":362},{"id":686,"name":"任务参数配置(新)","pId":677},{"id":431,"name":"结束任务控制","pId":362},{"id":687,"name":"查看列表","pId":678},{"id":432,"name":"结束任务","pId":362},{"id":688,"name":"添加团队","pId":678},{"id":433,"name":"车牌号查询","pId":362},{"id":689,"name":"获取团队信息","pId":678},{"id":945,"name":"停车费匹配记录","pId":355},{"id":434,"name":"车辆任务","pId":362},{"id":690,"name":"获取当前运营商人员","pId":678},{"id":435,"name":"运维小组","pId":362},{"id":691,"name":"查看列表","pId":681},{"id":436,"name":"小组成员列表","pId":362},{"id":692,"name":"查看任务详情","pId":681},{"id":437,"name":"还车网点列表","pId":362},{"id":693,"name":"分配任务","pId":681},{"id":438,"name":"新建任务","pId":362},{"id":694,"name":"取消任务","pId":681},{"id":439,"name":"查看详情","pId":348},{"id":695,"name":"转派任务","pId":681},{"id":440,"name":"订单查询","pId":350},{"id":696,"name":"结束任务控制","pId":681},{"id":952,"name":"停车费列表","pId":945},{"id":441,"name":"订单详情","pId":350},{"id":697,"name":"结束任务","pId":681},{"id":442,"name":"车辆照片","pId":350},{"id":698,"name":"车牌号查询","pId":681},{"id":443,"name":"操作信息","pId":350},{"id":699,"name":"车辆任务","pId":681},{"id":444,"name":"核对矫正","pId":350},{"id":700,"name":"运维小组","pId":681},{"id":445,"name":"车辆操作","pId":350},{"id":701,"name":"小组成员列表","pId":685},{"id":446,"name":"取消订单","pId":350},{"id":702,"name":"还车网点列表","pId":681},{"id":447,"name":"订单价格修改","pId":350},{"id":703,"name":"新建任务","pId":681},{"id":959,"name":"外部导入停车费","pId":945},{"id":448,"name":"免单","pId":350},{"id":704,"name":"添加运维任务状态列表","pId":681},{"id":449,"name":"强制还车","pId":350},{"id":705,"name":"获取任务类型","pId":681},{"id":450,"name":"获取最近网点","pId":350},{"id":706,"name":"运维记录列表","pId":682},{"id":451,"name":"订单车辆轨迹","pId":350},{"id":707,"name":"运维类型列表","pId":682},{"id":452,"name":"添加车型","pId":356},{"id":708,"name":"运维团队人员列表","pId":682},{"id":453,"name":"列表查询","pId":361},{"id":709,"name":"运维团队列表","pId":682},{"id":454,"name":"团队列表","pId":361},{"id":710,"name":"运维记录详情","pId":682},{"id":966,"name":"在修车辆查询(新)","pId":677},{"id":455,"name":"添加员工","pId":361},{"id":711,"name":"审核","pId":682},{"id":456,"name":"查看人员详情","pId":361},{"id":712,"name":"获取小组员工","pId":681},{"id":457,"name":"修改人员信息","pId":361},{"id":713,"name":"删除团队","pId":678},{"id":458,"name":"停用账号","pId":361},{"id":714,"name":"团队未分配员工","pId":678},{"id":459,"name":"运维团队分配","pId":361},{"id":715,"name":"运营商列表","pId":686},{"id":460,"name":"列表查询","pId":387},{"id":716,"name":"修改团队","pId":678},{"id":461,"name":"查看修理厂详情","pId":387},{"id":717,"name":"团队管理-未分配网点","pId":678},{"id":973,"name":"获取在修车辆列表","pId":966},{"id":462,"name":"车型列表","pId":356},{"id":718,"name":"获取任务参数","pId":686},{"id":463,"name":"查看车型","pId":356},{"id":719,"name":"员工启用","pId":679},{"id":464,"name":"编辑车型","pId":356},{"id":720,"name":"角色列表","pId":679},{"id":465,"name":"删除车型","pId":356},{"id":721,"name":"新增任务参数","pId":686},{"id":466,"name":"车辆列表","pId":357},{"id":722,"name":"删除员工","pId":679},{"id":467,"name":"添加车辆","pId":357},{"id":723,"name":"可使用团队列表","pId":679},{"id":468,"name":"查看车辆","pId":357},{"id":724,"name":"人员列表","pId":679},{"id":980,"name":"电子围栏管理","pId":347},{"id":469,"name":"编辑车辆","pId":357},{"id":725,"name":"维修厂列表","pId":680},{"id":470,"name":"车辆行车轨迹","pId":357},{"id":726,"name":"查看人员","pId":679},{"id":471,"name":"复制","pId":348},{"id":727,"name":"添加员工","pId":679},{"id":472,"name":"车辆计费规则","pId":357},{"id":728,"name":"维修厂详情","pId":680},{"id":473,"name":"车机检测","pId":357},{"id":729,"name":"修改员工","pId":679},{"id":474,"name":"车辆上线","pId":357},{"id":730,"name":"运维角色列表","pId":685},{"id":475,"name":"查询列表","pId":349},{"id":731,"name":"新增维修厂","pId":680},{"id":987,"name":"查看短租信息","pId":349},{"id":476,"name":"违章列表","pId":358},{"id":732,"name":"团队分配","pId":679},{"id":477,"name":"查看详情","pId":349},{"id":733,"name":"编辑维修厂","pId":680},{"id":478,"name":"导入违章","pId":358},{"id":734,"name":"运维日志-查寻接口","pId":685},{"id":479,"name":"修改车辆计费","pId":349},{"id":735,"name":"积分规则详情","pId":684},{"id":480,"name":"删除","pId":348},{"id":736,"name":"新增规则","pId":684},{"id":481,"name":"查看违章","pId":358},{"id":737,"name":"更新规则","pId":684},{"id":482,"name":"处理违章","pId":358},{"id":738,"name":"任务类型","pId":684},{"id":994,"name":"帮助中心管理"},{"id":483,"name":"关联违章客户订单","pId":358},{"id":739,"name":"规则列表","pId":684},{"id":484,"name":"解绑关联违章","pId":358},{"id":740,"name":"获取团队人员列表","pId":683},{"id":485,"name":"有车提醒列表","pId":395},{"id":741,"name":"积分管理列表","pId":683},{"id":486,"name":"关联运维单违章","pId":358},{"id":742,"name":"运营商列表","pId":683},{"id":487,"name":"违章催缴列表","pId":358},{"id":743,"name":"积分详情","pId":683},{"id":488,"name":"取消有车提醒","pId":395},{"id":744,"name":"可使用团队列表","pId":683},{"id":489,"name":"保存违章催缴","pId":358},{"id":745,"name":"列表","pId":679},{"id":490,"name":"异常订单列表","pId":351},{"id":746,"name":"参数配置","pId":350},{"id":491,"name":"违章删除","pId":358},{"id":747,"name":"添加","pId":348},{"id":1003,"name":"帮助中心管理","pId":994},{"id":492,"name":"订单详情","pId":351},{"id":748,"name":"长租计费规则管理","pId":345},{"id":493,"name":"订单操作记录","pId":351},{"id":749,"name":"获取车型","pId":748},{"id":494,"name":"车型 启用/停用","pId":356},{"id":750,"name":"获取列表","pId":748},{"id":495,"name":"操作车辆","pId":356},{"id":751,"name":"添加","pId":748},{"id":496,"name":"处理异常","pId":351},{"id":752,"name":"查看详情","pId":748},{"id":497,"name":"事故列表","pId":385},{"id":753,"name":"编辑","pId":748},{"id":498,"name":"事故详情","pId":385},{"id":754,"name":"长租登记管理","pId":346},{"id":1010,"name":"获取问题类型枚举","pId":1003},{"id":499,"name":"事故删除","pId":385},{"id":755,"name":"芝麻守约记录管理","pId":346},{"id":500,"name":"事故-新增","pId":385},{"id":756,"name":"通过code实现地址三级联动","pId":754},{"id":501,"name":"获取最近网点","pId":351},{"id":757,"name":"城市列表","pId":754},{"id":502,"name":"事故-编辑","pId":385},{"id":758,"name":"根据运营商查询车型","pId":754},{"id":503,"name":"订单车辆轨迹","pId":351},{"id":759,"name":"长租登记查询","pId":754},{"id":504,"name":"事故-处理","pId":385},{"id":760,"name":"长租登记","pId":754},{"id":505,"name":"获取网点列表","pId":352},{"id":761,"name":"编辑","pId":754},{"id":1017,"name":"问答列表","pId":1003},{"id":506,"name":"新增网点","pId":352},{"id":762,"name":"获取列表","pId":755},{"id":507,"name":"修改网点","pId":352},{"id":763,"name":"查看详情","pId":755},{"id":508,"name":"删除网点","pId":352},{"id":764,"name":"守约","pId":755},{"id":509,"name":"网点详情","pId":352},{"id":765,"name":"关联客户订单列表","pId":358},{"id":510,"name":"获取全部企业","pId":352},{"id":766,"name":"查询列表","pId":379},{"id":511,"name":"上传多张图片","pId":352},{"id":767,"name":"运营商管理","pId":380}]
+
+  // console.time();
+  // console.log(getTree(oo));
+  // console.timeEnd();
+
+  // function getTreeCom(data) {
+  //   var arr = data.sort(((a, b) => a.id - b.id));
+  //   var arrs = [];
+  //   return arr.reduce((h, m) => {
+  //     if (m.pId) {
+  //       foo(h, m)
+  //     } else {
+  //       h.push(m)
   //     }
-  //   });
-  //   var res = arr.reduce((h, m, i, a) => {
-  //     if (m.pid) {
-  //       if (ajObj[m.pid]) {
-  //       } else {
-  //         ajObj[m.pid] = [];
-  //       }
-  //       foo(h, m, ajObj)
-  //
-  //     }
-  //
-  //     function foo(arr, cur, addr) {
-  //       var flag = false;
-  //       arr.some((item, index, ar) => {
-  //         let theP = {};
-  //
-  //         addr[cur.pid].forEach(it => {
-  //           theP = arrs[it]
-  //         });
-  //         if (theP && theP.id === cur.pid) {
-  //           if (!item.children) {
-  //             item.children = []
+  //     return h;
+  //     function foo(arr, cu) {
+  //       arr.some(it => {
+  //         if (it.id === cu.pId) {
+  //           if(it.children) {
+  //             it.children.push(cu);
+  //           } else {
+  //             it.children = [];
+  //             it.children.push(cu);
   //           }
-  //           item.children.push(cur);
-  //           return true
-  //         } else if (cur.pid === item.id) {
-  //           addr[cur.pid].push(index);
-  //           if (!item.children) {
-  //             item.children = []
-  //           }
-  //           item.children.push(cur);
-  //           flag = true;
-  //           return true
-  //         } else if (item.children) {
-  //           addr[cur.pid].push(index);
-  //
-  //           flag = foo(item.children, cur, addr);
-  //           if (!flag) {
-  //             addr[cur.pid].pop()
-  //           }
+  //           return true;
+  //         } else if (it.children) {
+  //           foo(it.children, cu)
   //         }
-  //
-  //       });
-  //       return flag
+  //       })
   //     }
-  //
-  //     return h
   //   }, arrs)
-  //   console.log(ajObj)
-  //   return res
+  // }
+  // var arrTree = getTreeCom(oo);
+  // console.time();
+  // console.log(getTreeCom(oo));;
+  // console.timeEnd();
+
+
+  // function getNodePath(tree, tar) {
+  //   var p = [];
+  //   foo(tree, tar);
+  //   function foo (arr, tar) {
+  //     var flag = false;
+  //     arr.some((it, index) => {
+  //       if (it.id === tar) {
+  //         p.push(index);
+  //         flag = true;
+  //         return true;
+  //       } else if (it.children){
+  //         p.push(index);
+  //         flag = foo(it.children, tar);
+  //         if (!flag) {
+  //           p.pop();
+  //         } else {
+  //           return true;
+  //         }
+  //       }
+  //
+  //     });
+  //     return flag;
+  //   }
+  //   return p;
   // }
   //
-  // console.log(getTree(exampleTree))
+  // console.log(getNodePath(arrTree, 424));
+
+  const getTree1 = (a) => {
+      let num = 0;
+      let childrenObj = {};
+      let itemObj = {};
+      let result = [];
+      for(let index of a) {
+        num++;
+        if(!childrenObj[index.pId]) childrenObj[index.pId] = [];
+        childrenObj[index.pId].push(index);
+        itemObj[index.id] = index;
+      }
+      for(let index of childrenObj.undefined) {
+        num++;
+        index.children = childrenObj[index.id].map(item => {
+          num++;
+          item.children = childrenObj[item.id]
+          return item;
+        })
+        result.push(index);
+      }
+      return { num, result, childrenObj };
+    }
+  // console.time();
+  // console.log(getTree1(oo));
+  //
+  // console.timeEnd();
 
 
-  // 830. 较大分组的位置
+  /**
+   * 830. 较大分组的位置
+   */
+  //
 
   // var largeGroupPositions = function(s) {
   //     var fu = '';
@@ -853,8 +1004,10 @@
   // };
   // console.log(largeGroupPositions("aba"));
 
-
-  //  1700. 无法吃午餐的学生数量
+  /**
+   * 1700. 无法吃午餐的学生数量
+   */
+  //
   // var countStudents = function(students, sandwiches) {
   //
   //     var sl = students.length;
@@ -888,8 +1041,10 @@
   // console.log(countStudents([1,1,0,0], [0,1,0,1]));
   // console.log(countStudents([1,1,1,0,0,1], [1,0,0,0,1,1]));
 
-
-  //  1450. 在既定时间做作业的学生人数
+  /**
+   * 1450. 在既定时间做作业的学生人数
+   */
+  //
   // var busyStudent = function(startTime, endTime, queryTime) {
   //     var num = 0
   //     for (var i = 0;i < startTime.length; i++) {
@@ -901,8 +1056,10 @@
   // };
   // console.log(busyStudent([9, 8, 7, 6, 5, 4, 3, 2, 1], [10, 10, 10, 10, 10, 10, 10, 10, 10], 5));
 
-
-  // 463. 岛屿的周长
+  /**
+   * 463. 岛屿的周长
+   */
+  //
   // var islandPerimeter = function(grid) {
   //     var res = 0
   //     grid.forEach((it, id) => {
@@ -934,7 +1091,10 @@
   // };
   // console.log(islandPerimeter([[1]]));
 
-  // 189. 旋转数组
+  /**
+   * 189. 旋转数组
+   */
+  //
   // var rotate = function(nums, k) {
   //     var start = 0;
   //     while (start < k) {
@@ -945,8 +1105,10 @@
   // };
   // console.log(rotate([1,2,3,4,5,6,7], 2));
 
-
-  // 210. 课程表 II  没做出来 是一道图的问题
+  /**
+   * 210. 课程表 II  没做出来 是一道图的问题
+   */
+  //
   // var findOrder = function(numCourses, prerequisites) {
   //     if (prerequisites.length === 0) {
   //         var arr = new Array(numCourses).fill();
@@ -974,8 +1136,10 @@
   // };
   // console.log(findOrder(3, []));
 
-
-  // 200. 岛屿数量
+  /**
+   * 200. 岛屿数量
+   */
+  //
   // var numIslands = function(grid) {
   //     var num = 0;
   //     grid.forEach((it, r) => {
@@ -1024,8 +1188,10 @@
   //     ["0","0","0","0","0"]
   // ]));
 
-
-  // 1584. 连接所有点的最小费用
+  /**
+   * 1584. 连接所有点的最小费用
+   */
+  //
   // var minCostConnectPoints = function(points) {
   //     // let num = 0;
   //     // points.forEach(it => {
@@ -1053,7 +1219,11 @@
   // };
   // console.log(minCostConnectPoints([[0,0],[2,2],[3,10],[5,2],[7,0]]));
 
-  // 15. 三数之和
+
+  /**
+   * 15. 三数之和
+   */
+  //
   // var threeSum = function(nums) {
   //     if (nums.length < 3) return [];
   //     var soRes = nums.sort((a, b) => (a-b));
@@ -1092,7 +1262,10 @@
   // // console.log(threeSum([-1,0,1,2,-1,-4]));
   // console.log(threeSum([0,0,0,0]));
 
-  // 221。最大正方形
+
+  /**
+   * 221。最大正方形
+   */
 
   // 自己写的 超时了
   // var maximalSquare = function(matrix) {
@@ -1133,7 +1306,10 @@
   //     }
   // };
 
-  // 动态规划
+  /**
+   * 动态规划
+   */
+  //
   // var maximalSquare = function(matrix) {
   //     var dp = [];
   //     var res = 0;
@@ -1163,8 +1339,10 @@
   //     ["1", "1", "1", "1", "1"],
   //     ["1", "0", "0", "1", "0"]]));
 
-
-  // 面试题 17。16 按摩师
+  /**
+   * 面试题 17。16 按摩师
+   */
+  //
   // var massage = function (nums) {
   //   if (nums.length === 0) return 0;
   //   if (nums.length === 1) return nums[0];
@@ -1181,31 +1359,337 @@
   // };
   // console.log(massage([2, 1, 4, 5, 3, 1, 1, 3]));
 
-  // 64. 最小路径和
-  var minPathSum = function(grid) {
-    var gridBak = Array(grid.length).fill('');
-    grid.some((it, index) => {
-      gridBak[index] = Array(it.length).fill('');
-
-      it.some(((item, indexEm) => {
-        if (index === 0 && indexEm === 0) {
-          gridBak[index][indexEm] = grid[index][indexEm]
-        } else {
-          const left = indexEm === 0 ? gridBak[index - 1][indexEm] : gridBak[index][indexEm - 1];
-          const top = index === 0 ? gridBak[index][indexEm - 1] : gridBak[index - 1][indexEm];
-
-          gridBak[index][indexEm] = Math.min(left, top) + grid[index][indexEm]
-        }
-
-      }))
-    });
-    // console.log(gridBak);
-    return gridBak.pop().pop()
-  };
+  /**
+   * 64. 最小路径和
+   */
+  //
+  // var minPathSum = function(grid) {
+  //   var gridBak = Array(grid.length).fill('');
+  //   grid.some((it, index) => {
+  //     gridBak[index] = Array(it.length).fill('');
+  //
+  //     it.some(((item, indexEm) => {
+  //       if (index === 0 && indexEm === 0) {
+  //         gridBak[index][indexEm] = grid[index][indexEm]
+  //       } else {
+  //         const left = indexEm === 0 ? gridBak[index - 1][indexEm] : gridBak[index][indexEm - 1];
+  //         const top = index === 0 ? gridBak[index][indexEm - 1] : gridBak[index - 1][indexEm];
+  //
+  //         gridBak[index][indexEm] = Math.min(left, top) + grid[index][indexEm]
+  //       }
+  //
+  //     }))
+  //   });
+  //   // console.log(gridBak);
+  //   return gridBak.pop().pop()
+  // };
   // console.log(minPathSum([[1, 3, 1], [1, 5, 1], [4, 2, 1]]));
   // console.log(minPathSum([[1,2],[1,1]]));
-  console.log(minPathSum([[0,2,2,6,4,1,6,2,9,9,5,8,4,4],[0,3,6,4,5,5,9,7,8,3,9,9,5,4],[6,9,0,7,2,2,5,6,3,1,0,4,2,5],[3,8,2,3,2,8,8,7,5,9,6,3,4,5],[4,0,1,3,9,2,0,1,6,7,9,2,8,9],[6,2,7,9,0,9,5,2,7,5,1,4,4,7],[9,8,3,3,0,6,8,0,8,8,3,5,7,3],[7,7,4,5,9,1,5,0,2,2,2,1,7,4],[5,1,3,4,1,6,0,4,3,8,4,3,9,9],[0,6,4,9,4,1,5,5,4,2,5,7,4,0],[0,1,6,6,4,9,2,7,8,2,1,3,3,7],[8,4,9,9,2,3,8,6,6,5,4,1,7,9]]));
+  // console.log(minPathSum([[0,2,2,6,4,1,6,2,9,9,5,8,4,4],[0,3,6,4,5,5,9,7,8,3,9,9,5,4],[6,9,0,7,2,2,5,6,3,1,0,4,2,5],[3,8,2,3,2,8,8,7,5,9,6,3,4,5],[4,0,1,3,9,2,0,1,6,7,9,2,8,9],[6,2,7,9,0,9,5,2,7,5,1,4,4,7],[9,8,3,3,0,6,8,0,8,8,3,5,7,3],[7,7,4,5,9,1,5,0,2,2,2,1,7,4],[5,1,3,4,1,6,0,4,3,8,4,3,9,9],[0,6,4,9,4,1,5,5,4,2,5,7,4,0],[0,1,6,6,4,9,2,7,8,2,1,3,3,7],[8,4,9,9,2,3,8,6,6,5,4,1,7,9]]));
 
+  /**
+   * 翻转链表
+   */
+  //
+  // function reverse(h) {
+  //   var r = {};
+  //   var l = null;
+  //   var c = h;
+  //   while (c.next !== null) {
+  //     r = c.next;
+  //     c.next = l;
+  //     l = c;
+  //     c = r;
+  //   }
+  //   c.next = l;
+  //   return c
+  // }
+  //
+  // console.log(reverse({val: 1, next: {val: 2, next: {val: 3, next: {val:4, next: {val: 5, next: {val: 6, next: null}}}}}}));
+
+  /**
+   * 62. 不同路径
+   */
+  //
+  // const uniquePaths = function (m, n) {
+  //   const dp = new Array(n).fill(new Array(m).fill(0));
+  //   for (let i = 0; i < dp.length; i++) {
+  //     for (let j = 0; j < dp[i].length; j++) {
+  //       if (i === 0 && j === 0) {
+  //         dp[0][0] = 1;
+  //         continue
+  //       }
+  //       const left = i === 0 ? 0 : dp[i][j];
+  //       const top = j === 0 ? 0 : dp[i][j - 1];
+  //       dp[i][j] = left + top;
+  //     }
+  //   }
+  //   return dp.pop().pop();
+  // };
+  // console.log(uniquePaths(3, 7));
+
+
+  /**
+   * 343. 整数拆分
+   */
+  //
+  // var integerBreak = function(n) {
+  //   var dp = new Array(n + 1).fill(0);
+  //   dp[1] = 1;
+  //   dp[2] = 1;
+  //   for (let i = 3; i <= n; i++) {
+  //     // dp[i] =
+  //     for (let j = 2;j <= Math.floor(i / 2) + 1; j++) {
+  //       dp[i] = Math.max(dp[i - j] * j, j * (i - j));
+  //     }
+  //   }
+  //   return dp.pop()
+  // };
+  // console.log(integerBreak(10));
+
+  /**
+   * 62. 不同路径
+   */
+  //
+  // const uniquePathsWithObstacles = function (grid) {
+  //   const dp = Array(grid.length).fill(Array(grid[0].length).fill(0));
+  //   for (let i = 0; i < dp.length; i++) {
+  //     for (let j = 0; j < dp[i].length; j++) {
+  //       if (i === 0 && j === 0) {
+  //         dp[0][0] = grid[i][j] === 1 ? 0 : 1;
+  //         continue
+  //       }
+  //       const left = i === 0 ? 0 : dp[i][j];
+  //       const top = j === 0 ? 0 : dp[i][j - 1];
+  //       dp[i][j] = grid[i][j] === 1 ? 0 :left + top;
+  //     }
+  //   }
+  //
+  //   return dp.pop().pop();
+  // };
+  // console.log(uniquePathsWithObstacles([[0,1],[0,0]]));
+
+  /**
+   * 18. 四数之和
+   */
+  //
+  // var fourSum = function(nums, target) {
+  //   if (nums.length < 4) return [];
+  //   var numsS = nums.sort((a, b) => (a - b));
+  //   var res = [];
+  //   for (var i = 0; i < numsS.length - 3; i++) {
+  //     if (i > 0 && numsS[i] === numsS[i -1]) continue;
+  //     // if (i === 1)debugger;
+  //     for (var j = i + 1; j < numsS.length - 2; j++) {
+  //       if (j > i + 2 && numsS[j] === numsS[j -1]) continue;
+  //       var l = j + 1, r = numsS.length - 1;
+  //       if (numsS[i] + numsS[j] + numsS[l] + numsS[r] === target) {
+  //         res.push([numsS[i], numsS[j], numsS[l], numsS[r]])
+  //       }
+  //       while (l < r) {
+  //         var ll = l++;
+  //         if (numsS[ll] === numsS[l] && ll > j + 1) continue;
+  //         while (numsS[i] + numsS[j] + numsS[l] + numsS[r] < target) {
+  //
+  //           if (l >= r) break;
+  //           // var ll = l ++;
+  //           // if (numsS[ll] === numsS[l] && ll > j) continue;
+  //           l++;
+  //
+  //         }
+  //         while (numsS[i] + numsS[j] + numsS[l] + numsS[r] > target) {
+  //           if (l >= r) break;
+  //           // var rr = r --;
+  //           // if (numsS[rr] === numsS[r]) continue;
+  //           r--;
+  //
+  //         }
+  //         if (l >= r) break;
+  //         if (numsS[i] + numsS[j] + numsS[l] + numsS[r] === target) {
+  //           res.push([numsS[i], numsS[j], numsS[l], numsS[r]])
+  //         }
+  //       }
+  //     }
+  //   }
+  //   return res;
+  // };
+
+  /**
+   * 70. 爬楼梯
+   */
+  //
+  // var climbStairs = function(n) {
+  //   var arr = Array(n).fill(0);
+  //   for(var i = 0;i < arr.length; i++) {
+  //     if (i === 0) {
+  //       arr[i] = 1;
+  //       continue;
+  //     }
+  //     if (i === 1) {
+  //       arr[i] = 2;
+  //       continue;
+  //     }
+  //     arr[i] = arr[i - 2] + arr[i - 1];
+  //   }
+  //   return arr.pop();
+  // };
+  // console.log(climbStairs(4));
+
+
+  /**
+   * 迦南题目
+   */
+  // var arr = [-2,5,3,2,-6,4,-8,6];
+  // const dpMax = (arr) => {
+  //   const dp = Array(arr.length).fill(0);
+  //   for (var i = 0; i < arr.length; i ++) {
+  //     if (i === 0) {
+  //       dp[0] = arr[0]
+  //     } else {
+  //       dp[i]=Math.max(dp[i-1]+arr[i],arr[i])
+  //     }
+  //
+  //   }
+  //   return dp
+  // }
+  // console.log(dpMax(arr));
+
+
+  /**
+   * 85. 最大矩形
+   */
+  // var maximalRectangle = function(matrix) {
+  //   var dp = new Array(matrix.length).fill([]);
+  //   var res = 0;
+  //   for (var i = 0;i < matrix.length; i++) {
+  //     dp[i] = new Array(matrix[i].length).fill(0);
+  //     for (var j = 0;j < matrix[i].length; j++) {
+  //       if (i === 0) {
+  //         if(j === 0) {
+  //           dp[0][0] = [parseInt(matrix[0][0]), parseInt(matrix[0][0])]
+  //         } else {
+  //           if (parseInt(matrix[0][j]) === 0) {
+  //             dp[0][j] = [0, 0]
+  //           } else {
+  //             dp[0][j] = [Math.max(dp[0][j - 1][0] + 1, 1), 1]
+  //           }
+  //         }
+  //       } else {
+  //         if (j === 0) {
+  //           if (parseInt(matrix[i][j]) === 0) {
+  //             dp[i][j] = [0, 0]
+  //           } else {
+  //             dp[i][j] = [1, Math.max(dp[i - 1][j][1] + 1, 1)]
+  //           }
+  //         } else {
+  //           if (parseInt(matrix[i][j]) === 0) {
+  //             dp[i][j] = [0, 0]
+  //           } else {
+  //             if (i === 2 && j === 2) {
+  //               debugger
+  //             }
+  //             let [s1L, s1B] = dp[i - 1][j];
+  //             let [s2L, s2B] = dp[i][j - 1];
+  //
+  //             let l = 0;
+  //             let b = 0;
+  //
+  //
+  //
+  //             if (s2L === 0) {
+  //               l = 0;
+  //             } else if (s1L === 0 && s2L !== 0) {
+  //               l = s2L
+  //             }
+  //             if (s1B === 0) {
+  //               b = 0;
+  //             }else if (s1B === 0 && s2B !== 0) {
+  //               b = s1B
+  //             }
+  //             dp[i][j] = [l + 1, b + 1]
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   return dp
+  // };
+  // console.log(maximalRectangle([["1", "0", "1", "0", "0"], ["1", "0", "1", "1", "1"], ["1", "1", "1", "1", "1"], ["1", "0", "0", "1", "0"]]));
+
+
+
+  /**
+   * 1046. 最后一块石头的重量
+   */
+  // var lastStoneWeight = function(stones) {
+  //   let sa = stones.sort((a, b) => (a - b));
+  //   let r = 0;
+  //   while (sa.length > 1){
+  //     const f = sa.pop();
+  //     if (r === 0) {
+  //       r = sa.pop();
+  //     } else {
+  //       const s = sa.pop();
+  //       if (r > s) {
+  //         sa.push(s);
+  //       } else {
+  //         sa.push(r);
+  //         sa = sa.sort((a, b) => (a - b));
+  //         r = s;
+  //       }
+  //     }
+  //     if (r === f) {
+  //       r = 0;
+  //     } else {
+  //       r = Math.abs((f - r));
+  //     }
+  //   }
+  //   return sa.length === 0 ? r === 0 ? 0 : r : r === 0 ? sa[0] : Math.abs((sa[0] - r));
+  // };
+
+  // console.log(lastStoneWeight([3,4,8,9,4,2,5,7,10]));
+  // console.log(lastStoneWeight([1, 3]));
+
+  /**
+   * 1049. 最后一块石头的重量 II
+   */
+  // var lastStoneWeightII = function(stones) {
+  //
+  // };
+
+  /**
+   * 动态规划 解决背包问题
+   */
+  const solBack = (vo, val, ml) => {
+    if (val.length === 0 || ml === 0) {
+      return 0
+    }
+    var dp = Array(vo.length + 1).fill('');
+    dp = dp.map(it => (Array(ml + 1).fill(0)));
+    console.log(dp);
+    for (var i = 1; i <= vo.length; i ++) {
+      let cml = 0;
+      let cv = 0;
+      for (var k = 1;k <= i; k++) {
+        cml += vo[k - 1];
+        cv += val[k - 1];
+      }
+      for (var j = 1; j <= ml; j ++) {
+        if (j === 0 || i === 0) continue;
+
+        if (j === 3) {
+          // debugger
+        }
+        if (j >= vo[i - 1]) {
+          dp[i][j] = Math.max(dp[i - 1][j - vo[i - 1]] + val[i - 1], dp[i - 1][j], val[i - 1]);
+        } else {
+          dp[i][j] = dp[i - 1][j]
+        }
+      }
+    }
+    // return dp.pop().pop();
+  };
+  console.log(solBack([2, 3, 5, 7], [2, 5, 2, 5], 10));
 </script>
 </body>
 </html>
